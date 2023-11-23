@@ -21,7 +21,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CS 246/CS 246 Notes/L21 Exception Safety, Vectors, Casting.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               }
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CS 246/CS 246 Notes/L21 Exception Safety, Vectors, Casting.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CS 246/CS 246 Notes/L21 Exception Safety, Vectors, Casting.md",
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CS 246/CS 246 Notes/L21 Exception Safety, Vectors, Casting.md"
+                "file": "README.md"
               }
             }
           }
@@ -156,10 +156,14 @@
       "markdown-importer:Open format converter": false
     }
   },
-  "active": "2871d65a94cdb6e6",
+  "active": "e48f6400deb57e81",
   "lastOpenFiles": [
-    "L21 Exception Safety, Vectors, Casting 1.md",
+    "CS 246/CS 246 Notes/L2 Files and Strings.md",
+    "README.md",
+    "Untitled.md",
+    "New Text Document.txt",
     "CS 246/CS 246 Notes/L21 Exception Safety, Vectors, Casting.md",
+    "L21 Exception Safety, Vectors, Casting 1.md",
     "CS 246/CS 246 Notes/L20 MVC, Exception Safety, Smart Pointers.md",
     "CS 246/CS 246 Notes/L11 Spaceship Operator, Classes, Encapsulation, Iterator.md",
     "CS 246/CS 246 Notes/L17 Decorator and Observer.md",
@@ -169,7 +173,6 @@
     "CS 246/CS 246 Notes/L19 NVI, Maps, Compiling and Cohesion.md",
     "CS 246/CS 246 Notes/Pasted image 20231121114233.png",
     "CS 246/CS 246 Notes/L1 Introduction to C++.md",
-    "CS 246/CS 246 Notes/L2 Files and Strings.md",
     "CS 246/Final Project.md",
     "CS 246/CS 246 Notes/L18 Exceptions, Factory Method Pattern.md",
     "CS 246/CS 246 Notes/L13 Aggregation and Inheritance.md",
@@ -193,9 +196,6 @@
     "Untitled.canvas",
     "L14.md",
     "2023-10-25.md",
-    "CS 246/CS 246 Notes/L7 MIL, Copy Constructors.md",
-    "CS 246/CS 246 Notes/L6 Classes and Constructors.md",
-    "CS 246/CS 246 Notes/L5 Returns, Operator Overloads, Separate Compilation.md",
     "CS 246/CS 246 Notes",
     "CS 246"
   ]

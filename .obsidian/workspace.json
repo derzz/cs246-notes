@@ -137,9 +137,17 @@
                 "file": "README.md"
               }
             }
+          },
+          {
+            "id": "a003f8be5cfc7155",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {}
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",

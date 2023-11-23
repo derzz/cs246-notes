@@ -1,0 +1,81 @@
+{
+  "items": [
+    {
+      "type": "file",
+      "ctime": 1696351569121,
+      "path": "CS 246/CS 246 Course Notes.md",
+      "subpath": "#^f3514b",
+      "title": "Copy Assignment Operator"
+    },
+    {
+      "type": "file",
+      "ctime": 1696466543020,
+      "path": "CS 246/CS 246 Notes/L1 Introduction to C++.md",
+      "subpath": "#^969fb8",
+      "title": "Read from stdin until Failure"
+    },
+    {
+      "type": "file",
+      "ctime": 1696523259986,
+      "path": "CS 246/CS 246 Notes/L9 Copy, Swap, Move Assignment Operator, Elision, Member Operators.md",
+      "subpath": "#Rule of Big 5(Suggestion)",
+      "title": "Rule of Big 5(Suggestion)"
+    },
+    {
+      "type": "file",
+      "ctime": 1697119344626,
+      "path": "CS 246/CS 246 Notes/L7 MIL, Copy Constructors.md",
+      "subpath": "#^a4c543",
+      "title": "Copy Constructor Example"
+    },
+    {
+      "type": "group",
+      "ctime": 1698280252959,
+      "items": [
+        {
+          "type": "file",
+          "ctime": 1698280360367,
+          "path": "CS 246/CS 246 Notes/L6 Classes and Constructors.md",
+          "subpath": "#Benefit of Constructors",
+          "title": "Constructors"
+        },
+        {
+          "type": "file",
+          "ctime": 1696520075603,
+          "path": "CS 246/CS 246 Notes/L9 Copy, Swap, Move Assignment Operator, Elision, Member Operators.md",
+          "subpath": "#^968578",
+          "title": "Copy Assignment Operator"
+        },
+        {
+          "type": "file",
+          "ctime": 1696521888833,
+          "path": "CS 246/CS 246 Notes/L9 Copy, Swap, Move Assignment Operator, Elision, Member Operators.md",
+          "subpath": "#^61082c",
+          "title": "Move Constructor"
+        },
+        {
+          "type": "file",
+          "ctime": 1696522560998,
+          "path": "CS 246/CS 246 Notes/L9 Copy, Swap, Move Assignment Operator, Elision, Member Operators.md",
+          "subpath": "#^3ebeca",
+          "title": "Move Assignment Operator"
+        },
+        {
+          "type": "file",
+          "ctime": 1698280442152,
+          "path": "CS 246/CS 246 Notes/L8 Explicit Constructors, Destructors, Copy Assignment Operator.md",
+          "subpath": "#Destructor(`dtors`)",
+          "title": "Destructors"
+        }
+      ],
+      "title": "Big 5"
+    },
+    {
+      "type": "file",
+      "ctime": 1699568074359,
+      "path": "CS 246/CS 246 Notes/L12 Friends, Spaceship Operator Revisited, System Modelling.md",
+      "subpath": "#System Modelling",
+      "title": "System Modelling"
+    }
+  ]
+}

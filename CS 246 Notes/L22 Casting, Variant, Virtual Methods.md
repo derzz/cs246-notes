@@ -36,4 +36,29 @@ Book& br = ...;
 Text& tr = dynamic_cast<Text&>(br);
 ```
 - No such thing as a null reference- `std::bad_cast` exception is thrown!
-
+### Polymorphic assignment problem
+```cpp
+Text t1{...}, t2{...};
+Book& r1 = t1; Book& r2 = t2;
+r1 = r2;
+```
+- If `operator=` is non virtual: partial assignment
+- If it's virtual, mixed assignment
+	- Ability to set classes to one another that are not the same
+- Recall signature of virtual `operator=`
+```cpp
+Text& Text::operator=(const Book& other){
+	if(this == &other) return *this;
+	const Text& tother = dynamic_cast<const Text&>(other);
+	Book::operator=(tother);
+	topic = tother.topic;
+	return *this;
+}
+```
+### Is `dynamic_cast` good style?
+- With `dynamic_cast`, we can make decisions based on the run-time type information(RTII) of an object
+```cpp
+void whatIsIt(shared_ptr<Book> b){
+	if(dynamic_pointer_cast<Text>(b))
+}
+```

@@ -14,3 +14,10 @@ void g(const int* p){
 Turtle t;
 Student* s = reinterpret_cast<Student*>(&t);
 ```
+- Behaviour depends on the compiler and object layouts
+- Generally unsafe!
+4. `dynamic_cast`- Let's me check which subclass I am pointing to
+```cpp
+Book* bp = ...
+Text* tp = dynamic_cast<Text*>(btP)
+```

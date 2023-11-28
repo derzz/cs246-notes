@@ -1,6 +1,8 @@
 # Casting(Continued)
-1. `static_cast`- sensible, well defined costs
-2. `const_cast`- Allows you to remove `const` from a type
+## `static_cast`
+- sensible, well defined costs
+## `const_cast`
+- Allows you to remove `const` from a type
 ```cpp
 void f(int* p) // Assume f does not modify the int p points to
 void g(const int* p){
@@ -9,14 +11,16 @@ void g(const int* p){
 }
 ```
 - If `f` changes `p`- undefined behaviour
-3. `reinterpret_cast`- Take memory and reinterpret the bits stored there as a different type
+## `reinterpret_cast`
+- Take memory and reinterpret the bits stored there as a different type
 ```cpp
 Turtle t;
 Student* s = reinterpret_cast<Student*>(&t);
 ```
 - Behaviour depends on the compiler and object layouts
 - Generally unsafe!
-4. `dynamic_cast`- Let's me check which subclass I am pointing to
+## `dynamic_cast`
+- Lets me check which subclass I am pointing to
 ```cpp
 Book* bp = ...
 Text* tp = dynamic_cast<Text*>(bp);
@@ -59,6 +63,35 @@ Text& Text::operator=(const Book& other){
 - With `dynamic_cast`, we can make decisions based on the run-time type information(RTII) of an object
 ```cpp
 void whatIsIt(shared_ptr<Book> b){
-	if(dynamic_pointer_cast<Text>(b))
+	if(dynamic_pointer_cast<Text>(b)) cout << "Text";
+	else if(dynamic_pointer_cast<comic>(b)) cout << "Comic";
+	else cout << "Regular Book";
+}
+```
+- Tightly coupled to Book hierachy
+	- If I add a subclass, must add another `else-if`!
+	- This must be done everywhere I do this pattern otherwise there's a bug!
+- Is `dynamic_cast` bad style?
+	- It depends on use
+	- Use in `Text::operator =` doesn't need changing if we add more subclass types!
+- We can fix `whatisIt` by using a virtual method!
+```cpp
+class Book{
+	public:
+		virtual void identify()const {
+		cout << "Book" << endl;
+	};
+}
+
+class Text: public Book{
+	public:
+		void identify() const override{
+			cout << "Text" << endl;
+		}
+};
+
+void whatIsIt(Book* b){
+	if(b) b->identify();
+	else cout << "Nothing";
 }
 ```

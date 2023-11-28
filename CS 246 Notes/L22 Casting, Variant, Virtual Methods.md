@@ -95,3 +95,21 @@ void whatIsIt(Book* b){
 	else cout << "Nothing";
 }
 ```
+- We were able to use this solution of `identify`:
+1. There are a high number of possible Book subtypes and we want to add new ones with ease
+2. Books can have a uniform interface, subclass behaviour doesn't deviate too much
+
+- What about the opposite scenario:
+1. Consider we know subclass types in advance and we are ok that adding new subclasses will require extensive code changes
+2. Subclasses may not conform to a uniform interface- each may have significantly differing behaviour
+```cpp
+class Turtle: public Enemy{
+	void StealShell();
+}
+
+class Boss: public Enemy{
+	void epicBossBattle();
+};
+```
+- Adding new enemies will require large changes as each have unique behaviour- so maybe `dynamic_casting` isn't so bad
+- 

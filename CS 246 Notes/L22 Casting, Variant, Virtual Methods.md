@@ -112,4 +112,29 @@ class Boss: public Enemy{
 };
 ```
 - Adding new enemies will require large changes as each have unique behaviour- so maybe `dynamic_casting` isn't so bad
-- 
+	- Use `std:variant`
+# Variant
+- Variant, found in `<variant>` acts as a `type_safe` union:
+```cpp
+using Enemy = variant<Turtle, Boss>;
+// Type alias- Enemy means variant<Turtle,Boss>;
+
+Enemy e{Turtle{...}} // or {Boss{}}
+if(holds_alternative<Boss>(e)){
+	// It's a boss
+} else{...}
+
+// Access Value
+try{
+	Turtle t = get<Turtle>(e);
+} catch(std::bad_variant_access&){
+	...
+}
+```
+- If variant is left uninitialized- eg. Enemy e;
+	- It will default construct the first type in variant list
+- Won't compile if first type is not default constructable
+
+- If first type doesn't have a default constructor:
+1. Add a default constructor
+2. Reorder types 

@@ -19,5 +19,21 @@ Student* s = reinterpret_cast<Student*>(&t);
 4. `dynamic_cast`- Let's me check which subclass I am pointing to
 ```cpp
 Book* bp = ...
-Text* tp = dynamic_cast<Text*>(btP)
+Text* tp = dynamic_cast<Text*>(bp);
 ```
+- If `bp` points at a Text, `tp` points at that same Text object
+	- Otherwise, `tp` is set to `nullptr`
+```cpp
+if(tp) cout << "Text" << endl;
+else cout << "Not a Text" << endl;
+```
+- Dynamic cast only works if you have at least **one virtual method!**
+- We can also cast from `shared_ptrs` to other `shared_ptrs`: In `<memory>`
+	- `static_pointer_cast`, `dynamic_pointer_cast`, `const_pointer_cast`, `reinterpret_pointer_cast`
+- We can also dynamic cast references:
+```cpp
+Book& br = ...;
+Text& tr = dynamic_cast<Text&>(br);
+```
+- No such thing as a null reference- `std::bad_cast` exception is thrown!
+

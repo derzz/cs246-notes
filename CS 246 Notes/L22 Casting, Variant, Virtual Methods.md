@@ -137,4 +137,23 @@ try{
 
 - If first type doesn't have a default constructor:
 1. Add a default constructor
-2. Reorder types 
+2. Reorder types so first has a default constructor
+3. Use `std::monostate`- represents empty
+	- eg. `variant<monostate, Turtle, Boss>;
+- `std:optional<T>` is the same as `variant<monostate, T>`
+# How do Virtual Methods Actually Work?
+```cpp
+struct Vec{
+	int x,y;
+	void f();
+};
+
+struct vec2{
+	int x,y;
+	virtual void f();
+};
+
+vec v; // Are these different in memory?
+vec2 w;
+cout << sizeof(int) << sizeof(v) << sizeof(w);
+```

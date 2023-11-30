@@ -40,9 +40,26 @@ class C{
 C cobject{1,2};
 ```
 ![[Pasted image 20231130114858.png]]
+ - (Below: First one is the Book vtable and the second one is the Text vtable)
  ![[Pasted image 20231130115303.png]]
  ```cpp
  Book *bp = new Text/Comic/Book;
  bp->isHeavy();
 ```
-- 
+## Steps of `vTables`
+1. Follow the `vptr` to `vtable`
+2. Find corresponding entry in `vtable`
+3. Jump to that function pointer's location
+- The above happens at run time
+- Virtual functions are slower than non virtual functions because they require a `vtable` look up!
+- Additionally, objects corresponding to classes with virtual functions are larger due to the `vpointer`, which implies that as the program is running, it consumes more memory!
+## Why put the `vptr` at the top of the object?
+```cpp
+class A{
+	int x;
+};
+
+class B: public A{
+	int y
+};
+```

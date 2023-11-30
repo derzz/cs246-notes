@@ -115,8 +115,8 @@ C <|-- D
 # Virtual Inheritance
 - The deadly diamond of death!
 ```plantuml
-A <|-- B
-B <|-- D : Virtual
+A <|-- B : Virtual
+B <|-- D 
 A <|-- C : Virtual
 C <|-- D
 ```
@@ -124,3 +124,11 @@ C <|-- D
 struct B: public Virtual A{...};
 struct C: public Virtual A{...};
 ```
+- In `D`, the A fields are shared rather than duplicated- `dObject.a` works!
+## `ios_base`
+![[Pasted image 20231130123009.png]]
+## Object Layout
+- What happens if we create an `A*`, `B*`, or `C*` to this object?
+![[Pasted image 20231130123456.png]]
+- It can easily look like an `A` object or `B` object but not a `C` object
+	- What does the compiler do?

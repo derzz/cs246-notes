@@ -132,3 +132,32 @@ struct C: public Virtual A{...};
 ![[Pasted image 20231130123456.png]]
 - It can easily look like an `A` object or `B` object but not a `C` object
 	- What does the compiler do?
+- This is a D object:
+```
+vptr
+B fields
+vptr
+C fields
+D fields
+vptr
+A fields
+```
+- What happens if we create a `B* bp = &d;` and access `bp->a`
+- How does it change if `bp` points at a `B` object?
+B object layout:
+```
+vptr
+B fields
+V ptr
+A fields
+```
+`bp->a`- where "a" is located, depends on what `bp` points to, only knowable at runtime!
+- To locate a fields, use the vtable, it stores the distance to the a fields for its object
+- This is where virtual inheritance gets its name!
+	- What if I want an A* pointing at a D object?
+- Pointer adjustment occurs with virtual inheritance
+```cpp
+D dObject;
+A* ap = &dObject; // Points to the A subobject in D
+
+```

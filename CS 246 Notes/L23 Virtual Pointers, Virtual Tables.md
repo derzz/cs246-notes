@@ -39,3 +39,10 @@ class C{
 ```cpp
 C cobject{1,2};
 ```
+![[Pasted image 20231130114858.png]]
+ ![[Pasted image 20231130115303.png]]
+ ```cpp
+ Book *bp = new Text/Comic/Book;
+ bp->isHeavy();
+```
+- 

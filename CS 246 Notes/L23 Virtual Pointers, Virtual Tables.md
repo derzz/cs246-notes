@@ -87,4 +87,40 @@ C cObject;
 cout << cObject.a << " " << cObject.b << endl;
 ```
 - `C` inherits both `A` and `B`
-- Challenge
+## Shared Ancestor
+```cpp
+struct A{int a;};
+struct B: public A {int b;};
+struct C: public A{int c;};
+
+struct D: public B, public C{
+	int d;
+};
+
+D dobject;
+cout << dobject.a << endl; // Won't compile!
+```
+
+```plantuml
+A <|-- B
+B <|-- D
+A <|-- C
+C <|-- D
+```
+- `D` has two `A` fields! One from B and C!
+	- Ambiguous!
+- Just use `dObject.B::a` and `dObject.C:aa` to differentiate!
+- What if I want just one copy of my a fields?
+	- Use `virtual inheritance`!
+# Virtual Inheritance
+- The deadly diamond of death!
+```plantuml
+A <|-- B
+B <|-- D : Virtual
+A <|-- C : Virtual
+C <|-- D
+```
+```cpp
+struct B: public Virtual A{...};
+struct C: public Virtual A{...};
+```

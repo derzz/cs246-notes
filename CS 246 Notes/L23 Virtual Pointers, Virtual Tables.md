@@ -60,6 +60,31 @@ class A{
 };
 
 class B: public A{
-	int y
+	int y;
 };
+
+B* bp = new B;
+A* ap = bp;
+ap->x;
 ```
+![[Pasted image 20231130120802.png]]
+- To create an `A*` pointing at a `B` object, just point to the same location, and ignore the fields below!
+- B objects look like A objects if you ignore the B fields!
+# Multiple Inheritance
+```cpp
+struct A{
+	int a;
+};
+
+struct B{
+	int b;
+};
+
+struct C : public A, public B{
+	int c;
+};
+C cObject;
+cout << cObject.a << " " << cObject.b << endl;
+```
+- `C` inherits both `A` and `B`
+- Challenge

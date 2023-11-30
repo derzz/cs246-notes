@@ -159,5 +159,5 @@ A fields
 ```cpp
 D dObject;
 A* ap = &dObject; // Points to the A subobject in D
-
 ```
+- This adjustment occurs with assignment, static and dynamic casting, but not `reinterpret_cast`

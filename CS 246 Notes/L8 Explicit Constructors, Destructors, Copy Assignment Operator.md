@@ -100,6 +100,7 @@ p = n;
 struct Node{
 	Node& operator = (const Node& other){
 		delete next; // removes current memory and delete every single node
+		// Note this triggers node destructor!
 		data = other.data;
 		next = other.next? new Node{*other.next}: nullptr; // Copying values
 		return *this;

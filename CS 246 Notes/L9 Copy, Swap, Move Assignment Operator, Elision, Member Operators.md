@@ -13,9 +13,11 @@ Struct Node{
 		swap(next, other.next);
 	}
 	Node& operator=(const Node& other){
-		Node tmp{other};
-		Swap(tmp);
-		return *this;
+		Node tmp{other}; // Create a copy of what needs to be swapped
+		Swap(tmp); // Swap the values of data and next as below
+		return *this; 
+		// tmp goes out of scope and deleted. other is not affected as it's values are not being written and tmp swapped with other successfully
+		// This leads to a proper swap.
 	}
 }
 ```

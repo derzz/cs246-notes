@@ -42,7 +42,7 @@ int main(){
 
 - `#include`, the pre-processor will convert those to code immediately  
 	- A lot of includes will keep recompiling and can cause slowdowns
-- Compile system headers: `g++20h iosstream`
+- Compile system headers: `g++20h iostream`
   - Creates a folder in the local directory and keeps reusing this
 	  - Adds `gcm.cache`
   - Do this once when importing and go from there
@@ -74,7 +74,6 @@ int main(){
 ```
 
 - Characters:
-  
   - `cin >> x`- "get from"
   - `cout << y`- "put to" operator
 - Arrows point in direction of information flow
@@ -109,14 +108,10 @@ int main(){
 ```
 
 ^969fb8
-
 - One improvement: Implicit conversion from `cin` to `bool`
-
 - Conversion returns inverse of fail bit
-
 - if `(cin) => succeeds`, `cin` is in a good state
-
-- `if (!cin) => succeeds`, `cin` is in a bad state
+- if`(!cin) => succeeds`, `cin` is in a bad state
 
 ```cpp
 int main(){

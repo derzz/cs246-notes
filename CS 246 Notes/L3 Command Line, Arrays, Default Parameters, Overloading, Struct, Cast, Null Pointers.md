@@ -127,4 +127,4 @@ int main(){
   ```
 - Note that `inc(x)` made a copy of the arguments when we pass them to functions
   - "Pass by value" semantics
-- If we want to mutate an argument, use a pointer!
+- If we want to mutate an argument, use a pointer or pass a reference!

@@ -1,4 +1,4 @@
-	C++ has another pointer like type called a **reference**
+- C++ has another pointer like type called a **reference**
 ```cpp
 // Fixed version
 void inc(int* x){

@@ -1,12 +1,12 @@
 - Most important notes to know are pointers and dynamic memory
 - Linux and Bash, CMD Line, Debuggers(GDB and Valgrind), makefiles, source control
-
 # 3 Perspectives to OOP
 
 - Programmer's perspective: What does the code mean or do?
 	- How do we use OOP?
 - Compiler's perspective, how does our code get transformed to run on the machine?
 - Designer's perspective: How do we use OOP to write longer, more scalable and robust programs?
+
 
 # Hello World in C and C++
 

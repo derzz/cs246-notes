@@ -92,7 +92,7 @@ int main(){
 } // File is closed automatically when main ends
 ```
 
-- Another application of `istream`(`ostream` abstraction, strings, library`<sstream>`;)
+- Another application of `istream`  `ostream` abstraction, strings, library`<sstream>`;)
 	- `std:iostringstream`: Allows us to print to a string(with formatting)
 	- `std: istringstream`: Allows us to "read from" a string
 - Example: Convert an int to a String

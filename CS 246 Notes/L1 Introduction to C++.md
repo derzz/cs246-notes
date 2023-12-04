@@ -111,7 +111,7 @@ int main(){
 - One improvement: Implicit conversion from `cin` to `bool`
 - Conversion returns inverse of fail bit
 - if `(cin) => succeeds`, `cin` is in a good state
-- if`(!cin) => succeeds`, `cin` is in a bad state
+- if `(!cin) => succeeds`, `cin` is in a bad state
 
 ```cpp
 int main(){

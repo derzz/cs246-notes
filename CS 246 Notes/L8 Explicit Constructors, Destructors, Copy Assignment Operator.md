@@ -3,7 +3,7 @@
 struct Node{
 	int data;
 	Node* next,
-	Node(const Node & other): data{other.data}, next{other.next? new Node{*other.next*}: nullptr}{}
+	Node(const Node & other): data{other.data}, next{other.next? new Node{*other.next}: nullptr}{}
 };
 ```
 # Common Mistake in Copy Constructor

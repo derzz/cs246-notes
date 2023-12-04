@@ -92,7 +92,6 @@ Student t = s;
 struct Student{
     int assns, mt, final;
     Student(const Student& other): assns{other.assns}, mt{other.mt}, final{other.final}{ // other is referencing s
-
     } 
 }
 ```
@@ -124,8 +123,7 @@ struct Node{
     int data;
     Node* next;
     Node(const Node& other): data{other.data}, // Moving node down for copying
-    next{other.next ? new Node{*(other.next)} : nullptr}
-    {}
+    next{other.next ? new Node{*(other.next)} : nullptr}{}
 };
 ```
 
@@ -136,8 +134,7 @@ struct Node{
     - Recursion, and will stop recursing when there's no nullptr
 - Can have stack overflows if keep calling the stack
     - ![](https://cdn.discordapp.com/attachments/966496028469624875/1156994321589993592/image.png?ex=6516fe6e&is=6515acee&hm=0bb4657c13e3da22bbf282dfbbad5382878a9bbd7ffe3c67f1f5ec1113449100&)
-    
-    ### When is Copy Constructor Invoked?
-    - Constructing one object from the another of the same type
-    - Pass by value: There are subtleties- to be discussed regarding move
-    - Return by value:
+
+### When is Copy Constructor Invoked?
+- Constructing one object from the another of the same type
+- Pass by value: There are subtleties- to be discussed regarding move

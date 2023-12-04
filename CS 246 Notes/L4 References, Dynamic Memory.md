@@ -1,3 +1,4 @@
+# References
 - C++ has another pointer like type called a **reference**
 ```cpp
 // Fixed version
@@ -6,9 +7,9 @@ void inc(int* x){
 }
 
 int main(){
-  int x = 5;
-  inc(&x);
-  cout << x << endl; // 5
+  int z = 5;
+  inc(&z);
+  cout << z << endl; // 6
 }
   ```
 - Z is an "l value reference to X"
@@ -20,7 +21,6 @@ int& z = 5; // Not allowed to compile
 - Z is an alias for x- any place we see Z, we can replace it with X in our minds
 	- Any changes to Z are reflected in X
 - References are like `const` pointers with automatic dereferencing
-# References
 - How can we tell `&` means reference vs. address of?
 	- If `&` appears in a type -> Reference
 	- If `&` appears in an expression -> Address of operator

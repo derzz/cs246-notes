@@ -35,10 +35,11 @@ g(&x); // expression, address of operator
 - Cannot assign temporary to an `lvalue` reference
 	- `lvalue` references may only be initialized to `lvalues`
 ```cpp
-int& z = x + y;
+int& z = x + y; // Illegal, x + y returns an integer rvalue
 int& z = f(); // Also illegal, there are "rvalues, temporary, do not have long term memory location"
 ```
 - Cannot create a pointer to a reference
+	- You can't get the memory address of a reference, so how will the pointer be able to make a pointer to the reference?
 ```cpp
 // Read right to left!
 int*& z; // A reference to a pointer to an integer, allowed!
@@ -46,12 +47,15 @@ int&* x; // A pointer to a reference to an integer, not allowed!
 ```
 - Cannot create a reference to a reference
 	- It has no value and the syntax is reserved for something else
+	- Furthermore, if you try to reference a reference, it's ambiguous to the compiler what reference should a reference reference to?
 ```cpp
 int&& z = x; // Not allowed, means something different - "rvalue reference"
 ```
 - Cannot create an array of references
+	- You are trying to rebound different references to different objects, which violates the whole principle of references!
 ```cpp
 int& arr[3] = {x, y, z}; // Won't compile, not allowed
+int* arr[3] = {&x, &y, &z}; // Valid, now this is a pointer pointing at different references!
 ```
 ### What are References Useful For?
 - Most commonly used in function arguments(`args`)

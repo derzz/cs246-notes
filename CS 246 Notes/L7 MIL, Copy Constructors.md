@@ -1,4 +1,4 @@
-
+# Member Initialization List
 ```cpp
 struct vec{
     int x, y;
@@ -18,15 +18,16 @@ Basis b; // won't compile!
 struct Basis{
     vec v1, v2;
     Basis(): v1{0, 1}, v2{1, 0} {}
-
 }
+
+Basis b; // Will compile by setting default parameters to v1 and v2
 ```
 - More generally, we can create a constructor like so
 ```cpp
 struct Basis{
     vec v1, v2;
     Basis(): v1{0, 1}, v2{1, 0} {}
-    Basis(const vec& v1, const vec&v2: v1{v1}, v2{v2}{}) // Takes in two vectors and initializes them
+    Basis(const vec& v1, const vec&v2): v1{v1}, v2{v2}{} // Takes in two vectors and initializes them
 }
 ```
 
@@ -75,7 +76,6 @@ Student s{60, 70, 80};
 Student r{s};
 Student t = s;
 ```
-
 - All of these involve the copy constructor, creating one object from another of the same type
 #### Compiler Provided Copy Constructor
 

@@ -163,7 +163,7 @@ Basis b; // Attempts to invoke default constructor
 ## Steps of Object Creation
 
 1. Space is allocated to store the object in.
-2. _Later_ 🤔
+2. MIL is invoked and the member variables of a class is built. If the member has a constructor, it will be called.
 3. Fields are initialized
 	- Call `vec` default constructor, which doesn't exist
 4. `ctor` body runs 

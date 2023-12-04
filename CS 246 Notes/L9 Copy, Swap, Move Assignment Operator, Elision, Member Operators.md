@@ -1,4 +1,4 @@
-# Copy/Swap Idiom: Another Method to Implement Copy Assignment
+ Copy/Swap Idiom: Another Method to Implement Copy Assignment
 ```cpp
 Node* n = new Node{1, new Node{2, new Node{3, nullptr}}};
 Node p{4, new Node{5, nullptr}};

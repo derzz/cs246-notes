@@ -13,9 +13,7 @@
 - `g++20m *.o -o program`
 	- Links together the object files
 # Classes
-
 - "Simplest form- a class is a struct with functions inside it"
-
 ```cpp
 // Student.cc
 
@@ -53,12 +51,10 @@ struct student {
 };
 ```
 - No need to write `this->` in most cases
-- `grade` is defined inside the `struct`(which is allowed)          
+- `grade` is defined inside the `struct`(which is allowed)
 - Generally separate into interface and implementation
 ### Initializing Objects
-
 - To control how objects are created, we can write a _constructor_ (`ctor`)
-    
 ```cpp
 // student.cc
 struct Student {
@@ -67,7 +63,6 @@ struct Student {
 	Student(int assns, int mt, int final); // Constructor!
 };
 ```
-    
 
 ```cpp
 //student-impl.cc

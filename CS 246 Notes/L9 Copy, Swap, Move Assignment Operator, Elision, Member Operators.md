@@ -43,7 +43,6 @@ Node l = oddsOrEvens(); // Return by Value, copy values from functions into fiel
 // Copy from oddsOrEvens stack frame into l
 ```
 ## What the Copy Looks like(Inefficient)
-
 - Aka, we just copied 50 nodes, then deleted originals! What if we instead reused them?
 	- `o` gets deleted as the function goes out of scope
 - This is only allowed if we are certain no one else will be using the originals!

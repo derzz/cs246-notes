@@ -79,3 +79,37 @@ vector<int> w (v.size());
 transform (v.begin(), v.end(), w.begin(), add1);
 // w = {3, 4, 6, 8, 12};
 ```
+- We say `Iter` requires ++, !=, `*`, what about `Fn`?
+	- The argument types must match, and `f(*start)` must be valid syntax!
+- We can overload `operator()`, this makes a function object or `functor`
+# Functor
+```cpp
+class Plus{
+	int m;
+	public:
+		plus(int m): m{m}{}
+		int operator()(int n){return n + m};
+}
+
+Plus p{5};
+cout << p(10) << endl; // 15
+transform(v.begin(), v.end(), w.begin(), p);
+p = {7, 8, 12, 16};
+```
+
+```cpp
+class IncreasingPlus{
+	int m = 0;
+	public:
+		int operator()(int n){return n + (m++);}
+}
+
+IncreasingPlus ip;
+cout << ip(5) << ip(5) << ip(5) << endl;
+// 5 6 7
+
+vector v{2, 3, 5, 7, 11};
+vector<int>w(v.size());
+transform(v.begin(), v.end(), w.begin(), IncreasingPlus{});
+w = {2. 4. 7. 10. 15}
+```

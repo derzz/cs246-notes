@@ -111,5 +111,25 @@ cout << ip(5) << ip(5) << ip(5) << endl;
 vector v{2, 3, 5, 7, 11};
 vector<int>w(v.size());
 transform(v.begin(), v.end(), w.begin(), IncreasingPlus{});
-w = {2. 4. 7. 10. 15}
+w = {2. 4. 7. 10. 15};
+```
+- Vector of integers, how many are even?
+```cpp
+bool even(int n){return n % 2 == 0;}
+vector<int> v{...};
+int x = count_if(v.begin(), v.end(), even);
+// Address of operator is implicit
+```
+# Lambda Functions
+- In CS135, we would use a lambda instead of a full function, we can do the same here:
+```cpp
+int x = count_if(v.begin(), v.end(), [](intn){return n%2 == 0;})
+```
+# Iterators
+- Iterators are powerful concepts, can be applied beyond just containers
+	- See `<iterator>`
+```cpp
+vector<int> v{1, 2, 3, 4, 5};
+ostream_iterator<int> out{cout, ","};
+copy(v.begin(), v.end(), out); //prints 1, 2, 3, 4, 5
 ```

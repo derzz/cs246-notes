@@ -50,5 +50,32 @@ template<typename Iter, typename T>
 ## Copy
 ```cpp
 template<typename InIter, typename outIter>
-
+	outIter copy(InIter, start, InIter finish, outIter result);
+```
+- Copies the values from `[start, finish)`, increments results each time
+- Assume `result` has enough space
+```cpp
+vector v{1, 2, 3, 4, 5, 6, 7};
+vector<int> w(4); // 4 0's
+copy(v.begin()+ 1, v.begin()+5, w.begin()); // v.begin()+5 is not inclusive
+// w = {2, 3, 4, 5}
+```
+## Transform
+```cpp
+template<typename InIter, typename outIter, typename fn>
+	outIter transform(InIter start, InIter finish, OutIter result, Fn f){
+	while(start != finish){
+		*result = f(*start);
+		++ start; ++result;
+	}
+	return result
+	}
+```
+- Take values from start to finish and put them in result and make them return `f`
+```cpp
+int add1(int n){return n+1;}
+vector<int> v{2, 3, 5, 7, 11};
+vector<int> w (v.size());
+transform (v.begin(), v.end(), w.begin(), add1);
+// w = {3, 4, 6, 8, 12};
 ```

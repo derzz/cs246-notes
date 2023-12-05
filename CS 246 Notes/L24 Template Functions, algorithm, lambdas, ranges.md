@@ -133,3 +133,17 @@ vector<int> v{1, 2, 3, 4, 5};
 ostream_iterator<int> out{cout, ","};
 copy(v.begin(), v.end(), out); //prints 1, 2, 3, 4, 5
 ```
+- Another example, copy requires enough space to copy into!
+	- What if I want to expand a container while copying?
+```cpp
+vector v{1, 2, 3};
+vector w{4, 5, 6};
+copy(v.begin(), v.end(), back_inserter(w));
+```
+- For `back_inserter` iterators, assignment calls `push_back` for you, `w = {4, 5, 6, 1, 2, 3}`
+- Advice: Use `<algorithm>`, it can greatly simplify code and reduce bugs
+# Ranges
+- Consider `vector<T>::erase`- takes in an iterator, erases value at location, shifts down, returns iterator to now element in that location
+	- `O(n)` time
+- What if I want to erase k elements in a for loop: `o(nk)` time- instead use ranged version of erase: `erase(Iter start, Iter finish)`- erases from `[start, finish)`, shift once
+- 

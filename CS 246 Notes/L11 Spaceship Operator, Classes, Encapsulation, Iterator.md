@@ -1,5 +1,7 @@
 # More on the Spaceship Operator
-# Consider a case where `=default` is not appropriate for `<=>`
+[[L10 `Const` Objects, Arrays of Objects, Statics, 3-Way Comparison]]
+# Consider a case where `=default` is not appropriate for `<=>
+`
 - Linked Lists
 ```cpp
 Struct Node{

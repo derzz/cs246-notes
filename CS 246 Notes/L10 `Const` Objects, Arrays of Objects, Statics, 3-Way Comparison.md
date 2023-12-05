@@ -110,7 +110,7 @@ Struct Student{
 Student::howMany();
 ```
 - Static methods may only access static fields
-# Three Way Comparison
+# Three Way Comparison/Spaceship Operator
 - String Comparison in C:
 ```c
 Strcmp(s1, s2); // < 0 if s1 < s2, == 0 if s1=s2, >0 if s1 > s2

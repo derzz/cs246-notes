@@ -39,7 +39,6 @@ int main(){
   - For memory safety in most cases
     
 # Compilation
-
 - `#include`, the pre-processor will convert those to code immediately  
 	- A lot of includes will keep recompiling and can cause slowdowns
 - Compile system headers: `g++20h iostream`

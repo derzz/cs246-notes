@@ -42,19 +42,20 @@ cout << s.grade() << endl; // Compilation error
 - If we know grade won't modify fields, we must declare it to use grade with a `const` object:
 ```cpp
 Struct Student{
-	int assns, mt, final;
+	int assns, mt, finalExam;
 	float grade() const;
 };
 
 // Impl File
 float Student:grade() const{ // Part of signature! Must appear in interface AND implementation.
-	return assns*0.4+mt*0.2 + final*0.4;
+	return assns*0.4+mt*0.2 + finalExam*0.4;
 }
 ```
 
 
 ```cpp
 const Student s{60, 70, 80};
+// If we add s.assns = 70; this will not compile
 cout << s.grade() << endl; // New, this compiles, because grade is a const method
 ```
 - Constant objects may only have constant methods called on them
@@ -83,6 +84,7 @@ Struct Student{
 - Can be changed in constant methods and for constant objects
 - Use mutable sparingly- decreases usefulness of `const`
 # Static Fields and Methods
+#static
 - What if I want to record the number of calls for ALL students(instead of just one)?
 - Or keep track of # student created?
 ```cpp
@@ -97,6 +99,7 @@ Struct Student{
 Student s{60, 70, 80};
 Student r{100, 100, 100};
 cout << Student::numInstances << endl; // Syntax works with static variables
+// Need this syntax as numInstances is static
 ```
 ## Static Methods
 - Defined for the class, rather than any one particular object
@@ -132,9 +135,8 @@ if(n < 0) cout << "less"
 else if(n==0) cout << "equals"
 else cout << "s1 greater than s2"
 ```
-- Since `std::strong_ordering` is a lot to type
-	- Use automatic type deduction: `auto n = (s1<=>s2);`
-		- `auto` is the return type of expression
+- Since `std::strong_ordering` is a lot to type, use automatic type deduction: `auto n = (s1<=>s2);`
+	- `auto` is the return type of expression
 - We may also overload `<=>` for our own types
 - Eg.  Vectors `v1` and `v2`, if we do `v1 <=> v2`, we get `v1 == v2`, `v1 != v2`, `v1 <= v2`, `v1 >= v2`, `v1 < v2`, `v1 > v2`
 ```cpp

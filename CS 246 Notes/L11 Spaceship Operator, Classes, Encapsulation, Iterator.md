@@ -15,6 +15,7 @@ Struct Node{
 	}
 };
 ```
+- By doing a spaceship operator, we can isolate specific cases of the Linked List and output an appropriate response like above
 # Encapsulation
 ```cpp
 Struct Node{

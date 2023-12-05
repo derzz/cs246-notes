@@ -1,4 +1,5 @@
 # More on the Spaceship Operator
+
 [[L10 `Const` Objects, Arrays of Objects, Statics, 3-Way Comparison]]
 # Consider a case where `=default` is not appropriate for `<=>
 `

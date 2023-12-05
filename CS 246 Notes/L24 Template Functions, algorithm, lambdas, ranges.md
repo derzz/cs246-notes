@@ -146,4 +146,32 @@ copy(v.begin(), v.end(), back_inserter(w));
 - Consider `vector<T>::erase`- takes in an iterator, erases value at location, shifts down, returns iterator to now element in that location
 	- `O(n)` time
 - What if I want to erase k elements in a for loop: `o(nk)` time- instead use ranged version of erase: `erase(Iter start, Iter finish)`- erases from `[start, finish)`, shift once
-- 
+- Collection of 2 iterators is a range:
+	- Consider: `vector<int> v`: I want only add numbers and square them
+```cpp
+auto odd = [](int n){return n%2 != 0;}
+auto sqr = [](int n){return n*n;}
+vector<int> v{...};
+vector<int> w, x;
+
+copy_if(v.begin(), v.end(), back_inserter(w), odd);
+transform(w.begin(), w.end(), back_insereter(x), sqr);
+
+```
+- Problems with above
+	1. Functions are on separate lines rather than composed
+		- Fix: If `copy_if` and `transform` return ranges instead of an ending iterator
+	2. `w` is only used for temporary storage
+		- Solved using lazy evaluation
+
+## Lazy Evaluation
+```cpp
+import <range>
+vector<int> v{1, 2, 3, 4, 5};
+auto x = range::views::transform(ranges::views::filter(v,add), sqr);
+```
+- x will apply filter and then square when you iterate
+- These also have versions that take the function, return a function object to take the range:
+	- `f = filter(add)`, `transform(sqr)`
+	- `f(R)` where `R` is a range
+- `Operator |` is defined such that `R | f = f(R)`

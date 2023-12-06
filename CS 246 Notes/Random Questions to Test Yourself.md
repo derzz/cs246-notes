@@ -11,4 +11,8 @@ struct Node{
 - Create the copy assignment and move assignment operator for a linked list
 
 # Static and Spaceship Operator
-- Using the spaceship operator, mak
+- Using the spaceship operator, make a program that calculates whether a Linked List is longer than the other.
+
+- Define encapsulation and using structs and classes, make a problem with them.
+- Create an iterator to traverse a given linked list. Include the operations `++`, `!=`, and `*`(dereference
+	- After, create a main function, given a linked list `a`, using the iterator, output the values of `a` in a 

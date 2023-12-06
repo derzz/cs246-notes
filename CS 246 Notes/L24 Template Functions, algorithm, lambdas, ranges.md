@@ -175,3 +175,6 @@ auto x = range::views::transform(ranges::views::filter(v,add), sqr);
 	- `f = filter(add)`, `transform(sqr)`
 	- `f(R)` where `R` is a range
 - `Operator |` is defined such that `R | f = f(R)`
+```cpp
+auto x = v | filter(add) | transform(sqr);
+```

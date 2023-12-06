@@ -6,3 +6,8 @@
 	2. Superclass constructor is run
 	3. MIL is initialized for class constructors
 	4. Constructor body runs
+- Steps of Object Destruction
+	1. Destructor body runs
+	2. Object fields thawt have destructors are called in reverse declaration order
+	3. Superclass destructor runs
+	4. Memory is freed

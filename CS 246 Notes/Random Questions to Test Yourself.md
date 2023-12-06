@@ -66,3 +66,31 @@ class Vec{
 };
 ```
 - What are the steps of object creation?
+- Explain the differences between composition, aggregation, and inheritance with a UML diagram
+- What are virtual functions and use an example of object slicing to explain their usage.
+- What are the steps of object destruction?
+- The below code causes a memory leak, identify it and fix it.
+```cpp
+class X{
+	int* n;
+	public:
+		X(int size): n{new int[size]} {}
+		~X(){delete[] n;}
+};
+
+class Y: public X{
+	int* m;
+	public:
+		Y(int size1, int size2): X{size1}, m{new int[size2]}{}
+		~Y(){delete[] m;}
+}
+
+X xObj{5};
+Y yObj{5, 10};
+X* xp = new X{5};
+Y* yp = new Y{5, 10};
+X* xpToY = new Y{5, 10};
+delete xp;
+delete yp;
+delete xpToY;
+```

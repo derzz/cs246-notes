@@ -77,7 +77,7 @@ Book b{"...", "...", 300};
 Text* pt = &t;
 Book* pb = &t;
 
-// If a book is heavy > 300 pages
+// If a book is heavy > 200 pages
 // If a text is heavy > 500 pages
 
 t.isHeavy(); //False
@@ -122,7 +122,7 @@ X xObj{5};
 Y yObj{5, 10};
 X* xp = new X{5};
 Y* yp = new Y{5, 10};
-x* xpToY = new Y{5, 10};
+X* xpToY = new Y{5, 10};
 delete xp;
 delete yp;
 delete xpToY;

@@ -9,14 +9,12 @@ struct Node{
 - Create the destructor for a linked list
 - Create the copy and move constructor for a linked list
 - Create the copy assignment and move assignment operator for a linked list
-
-# Static and Spaceship Operator
 - Using the spaceship operator, make a program that calculates whether a Linked List is longer than the other.
 
-- Define encapsulation and using structs and classes, make a problem with them.
+- Define encapsulation and using structs and classes, define a pro and con of using one over the other.
 - Create an iterator to traverse a given linked list. Include the operations `++`, `!=`, and `*`(dereference
 	- After, create a main function, given a linked list `a`, using the iterator, output the values of `a`.
-- Why doesn't the below code work?
+- Will the code below work? If so, explain the process and explain its output. If not, explain why not and a fix for it. Do not change the main function if a fix is needed.
 ```cpp
 #include <iostream>
 
@@ -31,7 +29,6 @@ public:
     void setWidth( double wid );
 };
 
-// Member function definition
 void Box::setWidth( double wid )
 {
     width = wid;
@@ -39,8 +36,6 @@ void Box::setWidth( double wid )
 
 void printWidth( Box box )
 {
-    /* Because printWidth() is a friend of Box, it can
-    directly access any member of this class */
     cout << "Width of box : " << box.width <<endl;
 }
 
@@ -57,4 +52,16 @@ int main()
 
     return 0;
 }
+```
+- Create a UML diagram for the following class:
+```cpp
+class Vec{
+	int x;
+	int y;
+
+	int getY(){return y;}
+
+	public:
+		int getX(){return x;}
+};
 ```

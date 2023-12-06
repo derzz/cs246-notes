@@ -135,17 +135,17 @@ delete xpToY;
 - Why does `delete xpToY` leak memory?
 	- Calls destructor on underlying object- that's a method!
 	- Destructor is non-virtual => Use static type
-	- We call x's destructor instead of Y's for `xpToY`, leaking memory
-- Solution: Make `x`'s destructor virtual!
+	- We call x's destructor instead of Y's for `xpToY`, leaking memory and undefined behaviour
+- Solution: Make `X`'s destructor virtual!
 ```cpp
 class X{
 	int* n;
 	public:
-		virtual ~x(){delete[] n;}
-		x(...){...}	
+		virtual ~X(){delete[] n;}
+		X(...){...}	
 };
 ```
-- If you renew a a Class may be subclassed, **Always** make its destructor virtual
+- If you renew a that Class may be subclassed, **Always** make its destructor virtual
 - If you know a class will never be subclassed, make the compiler enforce it via `final`
 ```cpp
 Class C final{

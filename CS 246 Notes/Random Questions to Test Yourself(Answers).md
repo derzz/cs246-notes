@@ -10,4 +10,4 @@
 	1. Destructor body runs
 	2. Object fields thawt have destructors are called in reverse declaration order
 	3. Superclass destructor runs
-	4. Memory is freed
+		1. Memory is freed

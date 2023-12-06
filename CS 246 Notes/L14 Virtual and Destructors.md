@@ -8,7 +8,7 @@ class Book{
 		string title, author;
 		int length;
 	public:
-		Book(){} 
+		Book(string title, string author, int length): title{title}, author{author}, length{length}{} 
 		bool isHeavy() const{
 			return length > 200;
 		}
@@ -17,8 +17,8 @@ class Book{
 class Text: public Book{
 	string topic;
 	public:
-		Text(){}
-		bool isHeavy() const{
+		Text(string title, string author, int length): title{title}, author{author}, length{length}, topic{topic}{} 
+		bool isHeavy() const{ // Overwriting isHeavy()
 			return length > 500;
 		}
 };
@@ -28,7 +28,7 @@ Text t{"", "", 300, "topic"};
 b.isHeavy(); // true since length > 200
 t.isHeavy(); // false since length is not greater than 500
 Book b = Text{"", "", 300, "topic"}; // Allowed due to public inheritance between text and books
-b.isHeavy() // Look Below
+b.isHeavy() // Runs Book, not Text, look below for explanation
 ```
 - What if we call `b.isHeavy()`???
 	- It returns true as it is treated as a `Book`
@@ -76,6 +76,9 @@ Text t{"...", "...", 300, "..."};
 Book b{"...", "...", 300};
 Text* pt = &t;
 Book* pb = &t;
+
+// If a book is heavy > 300 pages
+// If a text is heavy > 500 pages
 
 t.isHeavy(); //False
 b.isHeavy(); // True

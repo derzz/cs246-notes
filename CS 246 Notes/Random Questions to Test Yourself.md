@@ -65,3 +65,4 @@ class Vec{
 		int getX(){return x;}
 };
 ```
+- What are the steps of object creation?

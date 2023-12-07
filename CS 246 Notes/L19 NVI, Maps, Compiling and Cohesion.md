@@ -29,7 +29,7 @@ class RedTurtle: public Turtle{
 - What about public virtual methods: Contradictory- they promise behaviour to clients, while giving subclasses power to change behaviour
 - No guarantee subclasses will respect invariants when overriding
 	- Template method pattern may be generalized into non-virtual idiom(**NVI**)
-# NVI
+# NVI(Non Virtual Idiom)
 - NVI States:
 	1. Public methods should be non-virtual
 	2. Virtual methods should be private or protected

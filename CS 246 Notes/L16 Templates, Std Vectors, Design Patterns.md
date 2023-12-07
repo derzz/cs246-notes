@@ -88,7 +88,8 @@ vector<int> v(4, 5); //Contains 5, 5, 5, 5
 ```
 - Note: Type deduction exists:
 ```cpp
-vector<int> w{1, 2, 3}; // int is inferred from the list
+vector w{1, 2, 3}; // int is inferred from the list for C++11 and above
+// Don't add random stuff that are not part of the type!
 ```
 ## Loop
 ```cpp
@@ -104,7 +105,7 @@ for(vector<int>::iterator it=v.begin(); it != v.end(); ++it){
 for(int n:v) cout << n << endl;
 
 // Loop in reverse
-for(vector<int>::reverse_iterator it += v.rbegin(); it != v.rend(); ++it) cout << *it << endl;
+for(vector<int>::reverse_iterator it = v.rbegin(); it != v.rend(); ++it) cout << *it << endl;
 ```
 ## Other Useful Functions
 ```cpp

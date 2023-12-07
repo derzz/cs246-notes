@@ -132,3 +132,9 @@ Book& r2 = t2;
 r1 = r2;
 ```
 - Write a template for a linked list, where the programmer can use any type in the node.
+- Assuming `v` is a vector, why won't the below work as expected?
+```cpp
+for(auto it = v.begin(); it != v.end(); ++it){
+	if(*it == 5) v.erase(it);
+}
+```

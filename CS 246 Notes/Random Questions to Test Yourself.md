@@ -138,3 +138,43 @@ for(auto it = v.begin(); it != v.end(); ++it){
 	if(*it == 5) v.erase(it);
 }
 ```
+- Create a decorator and implement the missing portions for Pizza given the following information and UML Diagram:
+```cpp
+class Pizza{
+public:
+	virtual float price() const = 0;
+	virtual string desc() const = 0;
+	virtual ~Pizza(){
+		
+	}
+};
+
+class CrustAndSauce: public Pizza{
+	public:
+		float price() const override{return 7.99;}
+		string desc() const override{return "pizza";}
+};
+```
+
+```plantuml
+abstract class Pizza
+class CrustandSauce
+abstract class decorator
+
+Pizza <|-- CrustandSauce
+Pizza <|-- decorator
+Pizza --* decorator
+
+class topping{
+	+ price() float
+	+ desc() string
+}
+
+class StuffedCrust
+class DippingSauce
+
+decorator <|--topping
+decorator <|-- StuffedCrust
+decorator <|-- DippingSauce
+
+```

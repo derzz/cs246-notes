@@ -112,5 +112,7 @@ class Coop: public Student{
 		int fees() const override;
 };
 
-Regular = new 
+Student* s = new Student();
+Regular r = Regular();
+Coop* c = new Coop();
 ```

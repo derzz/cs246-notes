@@ -116,3 +116,18 @@ Student* s = new Student();
 Regular r = Regular();
 Coop* c = new Coop();
 ```
+- The below code produces t1 in the end to now contains `"Shakespeare", "Mr. English", 200, "CS"` Why is that and how can we fix it?
+```cpp
+Text& Text::operator=(Text&& other){
+	Book::operator = (std::move(other));
+	topic = std::move(other.topic);
+	return *this;
+}
+
+Text t1{"Algos", "CLRS", 1000, "CS"};
+Text t2{"Shakespeare", "Mr. English", 200, "English"};
+
+Book& r1 = t1;
+Book& r2 = t2;
+r1 = r2;
+```

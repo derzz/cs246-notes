@@ -165,7 +165,7 @@ class AbstractBook{
 	string title, author;
 	int length;
 	protected:
-		Abstract Book& operator=(const AbstractBook & other) = default;
+		AbstractBook& operator=(const AbstractBook& other) = default;
 	public:
 		AbstractBook(...){...}
 		virtual ~AbstractBook() = 0; // Use destructor as pure virtual to make a class abstract if no other media makes sense

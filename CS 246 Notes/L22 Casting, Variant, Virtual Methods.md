@@ -55,7 +55,7 @@ Text& Text::operator=(const Book& other){
 	if(this == &other) return *this;
 	const Text& tother = dynamic_cast<const Text&>(other);
 	Book::operator=(tother);
-	topic = tother.topic;
+	topic = other.topic;
 	return *this;
 }
 ```

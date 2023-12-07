@@ -88,7 +88,7 @@ vector<int> v(4, 5); //Contains 5, 5, 5, 5
 ```
 - Note: Type deduction exists:
 ```cpp
-vector w{1, 2, 3}; // int is inferred from the list
+vector<int> w{1, 2, 3}; // int is inferred from the list
 ```
 ## Loop
 ```cpp

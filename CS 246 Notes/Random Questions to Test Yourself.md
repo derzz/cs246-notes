@@ -131,3 +131,4 @@ Book& r1 = t1;
 Book& r2 = t2;
 r1 = r2;
 ```
+- Write a template for a linked list, where the programmer can use any type in the node.

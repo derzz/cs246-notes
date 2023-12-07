@@ -77,7 +77,7 @@ for(auto& p:m){
 	cout << "key" << p.first << "value" << p.second << endl;
 }
 ```
-- Type of p: `std::paid<string, int>&`
+- Type of p: `std::pair<string, int>&`
 	- Pair is just a struct, first stores a string, second an int
 	- Used a struct because it's just a collection of data, no invariants to preserve
 - Or use a structured binding:

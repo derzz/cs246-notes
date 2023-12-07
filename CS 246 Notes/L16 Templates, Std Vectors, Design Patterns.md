@@ -1,4 +1,4 @@
-	```cpp
+```cpp
 class AbstractBook{
 ...
 public:

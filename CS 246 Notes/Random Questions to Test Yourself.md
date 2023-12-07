@@ -95,3 +95,22 @@ delete yp;
 delete xpToY;
 ```
 - What does `final` do?
+- Given the following code:
+```cpp
+class Student{
+	public:
+		virtual int fees() const = 0;
+};
+
+class Regular: public Student{
+	public:
+		int fees() const override;
+};
+
+class Coop: public Student{
+	public:
+		int fees() const override;
+};
+
+Regular = new 
+```

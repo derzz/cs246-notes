@@ -128,7 +128,7 @@ struct C: public virtual A{...};
 ## `ios_base`
 ![[Pasted image 20231130123009.png]]
 ## Object Layout
-- What happens if we create an `A*`, `B*`, or `C*` to this object?
+- What happens if we create an `A*`, `B*`, or `C*` to the `D` object?
 ![[Pasted image 20231130123456.png]]
 - It can easily look like an `A` object or `B` object but not a `C` object
 	- What does the compiler do?
@@ -148,7 +148,7 @@ B object layout:
 ```
 vptr
 B fields
-V ptr
+vptr
 A fields
 ```
 `bp->a`- where "a" is located, depends on what `bp` points to, only knowable at runtime!

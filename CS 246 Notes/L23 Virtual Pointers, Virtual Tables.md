@@ -121,8 +121,8 @@ A <|-- C : Virtual
 C <|-- D
 ```
 ```cpp
-struct B: public Virtual A{...};
-struct C: public Virtual A{...};
+struct B: public virtual A{...};
+struct C: public virtual A{...};
 ```
 - In `D`, the A fields are shared rather than duplicated- `dObject.a` works!
 ## `ios_base`

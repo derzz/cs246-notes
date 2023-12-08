@@ -68,7 +68,7 @@ void whatIsIt(shared_ptr<Book> b){
 	else cout << "Regular Book";
 }
 ```
-- Tightly coupled to Book hierachy
+- Tightly coupled to Book hierarchy
 	- If I add a subclass, must add another `else-if`!
 	- This must be done everywhere I do this pattern otherwise there's a bug!
 - Is `dynamic_cast` bad style?

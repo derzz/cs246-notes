@@ -116,7 +116,7 @@ class Boss: public Enemy{
 # Variant
 - Variant, found in `<variant>` acts as a `type_safe` union:
 ```cpp
-using Enemy = variant<Turtle, Boss>;
+Enemy = variant<Turtle, Boss>;
 // Type alias- Enemy means variant<Turtle,Boss>;
 
 Enemy e{Turtle{...}} // or {Boss{}}

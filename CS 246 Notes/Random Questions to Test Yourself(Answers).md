@@ -12,15 +12,11 @@ Node(int val, Node* nextNode): val{val}, nextNode{nextNode}{}
 - Create the copy and move constructor for a linked list
 ```cpp
 // Copy
-Node(const Node& copy){
-	if(node == 0) *this = 0;
-	else{
-		temp = copy;
-		while(temp){
-			Node* t = new Node();
-			nod
-		}
-	}
+Node(const Node& copy): val{copy.val}, next{copy.next ? new Node{*(copy.next)}: nullptr}{}
+
+// Move
+Node(Node&& move): val{move.val}, next{move.next}{
+	move.next = nullptr;
 }
 ```
 - Create the copy assignment and move assignment operator for a linked list

@@ -9,8 +9,7 @@ struct Node{
 - Create the destructor for a node
 - Create the copy and move constructor for a node
 - Create the copy assignment and move assignment operator for a node
-- Using the spaceship operator, make a program that calculates whether a node is longer than the other.
-
+- Using the spaceship operator, make a comparison that detects if a node is greater or less than the other. If both numbers are equal, check to see which list is longer or shorter than the latter.
 - Define encapsulation and using structs and classes, define a pro and con of using one over the other.
 - Create an iterator to traverse a given linked list. Include the operations `++`, `!=`, and `*`(dereference
 	- After, create a main function, given a linked list `a`, using the iterator, output the values of `a`.

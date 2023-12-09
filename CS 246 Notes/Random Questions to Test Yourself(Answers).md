@@ -20,7 +20,39 @@ Node(Node&& move): val{move.val}, next{move.next}{
 }
 ```
 - Create the copy assignment and move assignment operator for a linked list
+```cpp
+Node& operator=(const Node& copy){
+	if(this == &copy) return *this;
+	delete next;
+	val = other.val;
+	next = copy.next ? new Node{*other.next}: nullptr;
+	return *this;
+}
+
+// With swap
+Node& operator=(Node &&move){
+	swap(move);
+	return *this;
+}
+
+// Without swap
+Node& operator=(Node &&move){
+	val = move.val;
+	Node* temp = move.next;
+	move.next = next;
+	next = temp;
+	temp = nullptr;
+	return *this;
+}
+```
 - Using the spaceship operator, make a program that calculates whether a Linked List is longer than the other.
+```cpp
+auto Node::operator<=>(Node &other){
+	auto n = data <=> other.data;
+	if(n != 0) return n;
+	
+}
+```
 - `void printWidth( Box box );` is not defined as a function in Box. Since we can't augment main, we can not make `void printWidth` as `void Box::printWidth`, as main will be unable to call it. Instead, make `void printWidth(Box box)` into `friend void printWidth(Box box)` in the header to allow printWidth to access Box's private variables. 
 - Steps of Object Creation
 	1. Space is allocated

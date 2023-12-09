@@ -92,7 +92,7 @@ myBooks[0] = new Text{...};
 myBooks[1] = new Comic{...};
 
 for(int i = 0, i < 20; ++i){
-	cout << my Books[i] -> isHeavy() << endl; // Uses dynamic type
+	cout << myBooks[i] -> isHeavy() << endl; // Uses dynamic type
 }
 ```
 - What does override do in `Text.isHeavy`?

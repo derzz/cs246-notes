@@ -170,7 +170,7 @@ class D : private A    // 'private' is default for classes
 };
 ```
 - What are virtual functions and object slicing?
-	- Virtual functions are functions that can be overwritten by any inherited class. It is useful in object slicing as object slicing is basically converting a subclass object to it's superclass object. Take the following example and pay attention to `b.isHeavy()`
+	- Virtual functions are functions that can be overwritten by any inherited class. It is useful in polymorphism by changing one type to another. However, object slicing may occur, which takes the subclass' fields and methods and ignores some fields. Take the following example and pay attention to `b.isHeavy()`
 ```cpp
 class Book{
 	protected:
@@ -199,9 +199,44 @@ t.isHeavy(); // false since length is not greater than 500
 Book b = Text{"", "", 300, "topic"}; // Allowed due to public inheritance between text and books
 b.isHeavy() // Runs Book, not Text as isHeavy() in Book is not virtual.
 ```
-- Steps of Object Destruction
+By changing `isHeavy()` like so:, 
+```cpp
+class Book{
+	...
+	public:
+		virtual bool isHeavy() const{return length > 200;}
+};
+
+class Text: public Book{
+...
+public:
+	bool isHeavy() const override {return length > 500;}
+};
+```
+`b.isHeavy()` will run Text's `isHeavy()`.
+- What are the steps of Object Destruction?
 	1. Destructor body runs
 	2. Object fields that have destructors are called in reverse declaration order
 	3. Superclass destructor runs
 	4. Memory is freed
-- 
+- The below code causes a memory leak, identify it and fix it.
+	- Since the `X` destructor is non virtual, when doing polymorphism on `xpToY` and `delete xpToY`, `X`'s destructor runs and not `Y`'s. This causes a memory leak as the correct object destructor is not run. To fix this, make the destructors virtual like so to run `Y`'s destructor(which runs `X`'s destructor too!):
+```cpp
+virtual ~X(){delete[] n;}
+~Y() override{delete[] m;}
+```
+- What does `final` do?
+	- `final` stops a function from being overwritten. When used in a class, `final` doesn't allow anyone to inherit from it. Take below for some examples:
+```cpp
+class Base {
+public:
+    virtual void foo() final;
+};
+
+class derive: public Base{
+	public:
+		void foo() override; // Causes an error!
+}
+
+class Base2
+```

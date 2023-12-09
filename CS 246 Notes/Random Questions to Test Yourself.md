@@ -100,8 +100,8 @@ for(auto it = v.begin(); it != v.end(); ++it){
 	if(*it == 5) v.erase(it);
 }
 ```
-- What vector function will erase 
-- Create a decorator and implement the missing portions for Pizza given the following information and UML Diagram:
+- What vector function will put a value back at the end of the vector? What function will remove the last element in the vector? What will be in `vector<int> v(4, 5); `?
+- Create a decorator and implement the missing portions for Pizza given the following UML Diagram:
 ```cpp
 class Pizza{
 public:
@@ -142,3 +142,4 @@ decorator <|-- DippingSauce
 
 ```
 - What is RAII and why is it important in C++?
+- 

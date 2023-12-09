@@ -271,4 +271,48 @@ for(auto it = v.begin(); it != v.end();){
 	else it++;
 }
 ```
-- What 
+- What vector function will put a value back at the end of the vector? What function will remove the last element in the vector? What will be in `vector<int> v(4, 5); `?
+	- `emplace_back()`, `pop_back()`, and `[5, 5, 5, 5]`
+- Create a decorator and implement the missing portions for Pizza given the following UML Diagram:
+	- Answers may vary.
+```cpp
+class Decorator: public Pizza{
+	protected:
+		Pizza* next;
+	public:
+		Decorator(Pizza* p): next{p}{};
+		~Decorator(){delete next;}
+};
+
+class Topping: public Decorator{
+	string name;
+	public:
+		Topping(string name, Pizza *p): Decorator{p}, name{name}{}
+
+	float price() const override{
+		return 0.99 + next->price();
+	}
+	
+	string desc() const override{
+		return next->desc() + " with " + name;
+	}
+};
+
+class stuffedCrust: public Decorator{
+	public:
+		StuffedCrust(Pizza* p): Decorator{p}{}
+		float price() const override{
+			return 1.50 + next ->price();
+		}
+		string desc()const override{
+			return next->desc() + " with stuffed crust ";
+		}
+};
+```
+- What is RAII and why is it important in C++?
+	- It stands for Resource Allocation is Initalized(great name btw). It's a programming idiom used in C++ where resources are tied to object lifetimes: resource allocation (acquisition) is done during object creation (initialization), by the constructor, and resource deallocation is done during object destruction, by the destructor. RAII is important in C++ for the following reasons:
+		1. **Memory Management**: It helps in avoiding memory leaks. When an object goes out of scope, its destructor is called which can be programmed to free the allocated memory, ensuring that there are no memory leaks.
+		2. **Exception Safety**: It provides exception safety. If an exception is thrown, the stack unwinds, and all the objects in the stack will have their destructors called, releasing all resources owned by them.
+		3. **Resource Management**: It's not just about memory, but any resource that needs deterministic cleanup: file handles, network sockets, database connections, mutex locks, etc.
+		4. **Code Readability and Maintenance**: It makes the code easier to read and maintain. Resource management logic is tied to the object, which is more intuitive and less error-prone than manually controlling resource lifetimes.
+- 

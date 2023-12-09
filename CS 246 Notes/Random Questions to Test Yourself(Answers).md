@@ -131,8 +131,74 @@ class Vec{
 	3. MIL is initialized for class constructors
 	4. Constructor body runs
 - Explain the differences between composition, aggregation, and inheritance with a UML diagram
-	- Composition is a 'own-a' relationship between the superclass and subclass. The superclas
+	- Composition is a 'own-a' relationship between the superclass and subclass. The superclass will take full control of any subclass objects and whenever the superclass gets deleted, the subclasses gets deleted as a result.
+	- Aggregation is 'has-a' relationship and the superclass does not fully own a subclass object. Whenever the superclass gets deleted, the subclasses remain. A good example is when a superclass has access to a pointer from another class.
+	- Inheritance 'is -a' relationship. It is able to inherit any fields from the superclass but cannot access any private fields/methods from the superclass. However, it can access `protected` fields/methods from the superclass.
+	- The UMLs are left as an exercise for the reader(TLDR, In order: Black diamond, empty diamond, empty arrow)
+- What's the difference between public, protected, and private inheritance?
+	- The code below best explains it:
+```cpp
+class A 
+{
+    public:
+       int x;
+    protected:
+       int y;
+    private:
+       int z;
+};
 
+class B : public A
+{
+    // x is public
+    // y is protected
+    // z is not accessible from B
+};
+
+class C : protected A
+{
+    // x is protected
+    // y is protected
+    // z is not accessible from C
+};
+
+class D : private A    // 'private' is default for classes
+{
+    // x is private
+    // y is private
+    // z is not accessible from D
+};
+```
+- What are virtual functions and object slicing?
+	- Virtual functions are functions that can be overwritten by any inherited class. It is useful in object slicing as object slicing is basically converting a subclass object to it's superclass object. Take the following example and pay attention to `b.isHeavy()`
+```cpp
+class Book{
+	protected:
+		string title, author;
+		int length;
+	public:
+		Book(string title, string author, int length): title{title}, author{author}, length{length}{} 
+		bool isHeavy() const{
+			return length > 200;
+		}
+};
+
+class Text: public Book{
+	string topic;
+	public:
+		Text(string title, string author, int length): title{title}, author{author}, length{length}, topic{topic}{} 
+		bool isHeavy() const{ // Overwriting isHeavy()
+			return length > 500;
+		}
+};
+
+Book b {"", "", 300};
+Text t{"", "", 300, "topic"};
+b.isHeavy(); // true since length > 200
+t.isHeavy(); // false since length is not greater than 500
+Book b = Text{"", "", 300, "topic"}; // Allowed due to public inheritance between text and books
+b.isHeavy() // Runs Book, not Text as isHeavy() in Book is not virtual.
+```
 - Steps of Object Destruction
 	1. Destructor body runs
 	2. Object fields that have destructors are called in reverse declaration order

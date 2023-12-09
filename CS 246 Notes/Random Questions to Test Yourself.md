@@ -1,4 +1,3 @@
-# Big 5
 ```cpp
 struct Node{
 	int val;
@@ -57,6 +56,7 @@ class Vec{
 	int y;
 
 	int getY(){return y;}
+	int yolo() = 0;
 
 	public:
 		int getX(){return x;}
@@ -159,7 +159,7 @@ class C{
 }
 ```
 - What happens when you `throw` without a try catch?
-- What's wrong with the below code? What will happen with this code.
+- What's wrong with the below code? What will happen with this code?
 ```cpp
 struct CImpl{
 	int a;
@@ -170,7 +170,8 @@ class C{
 	unique_ptr<CImpl> pImpl;
 	void f(){
 		auto temp = make_unique<CImpl>(*pImpl);
-		
+		CImpl* cPtr = temp.get();
+		delete cPtr;
 		cout << temp->a << endl;
 	}
 }
@@ -178,3 +179,4 @@ class C{
 - Define coupling and cohesion and fill in the blanks and explain your reasoning:
 	- As programmers, we want "__ coupling, __ cohesion".
 - What is `variant` and how do we use it?
+- TODO Do Lesson 23 here

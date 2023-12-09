@@ -116,9 +116,10 @@ int main(){
 	- This code will not work. `void printWidth( Box box );` is not defined as a function in Box. Since we can't augment main, we can not make `void printWidth` as `void Box::printWidth`, as main will be unable to call it. Instead, make `void printWidth(Box box)` into `friend void printWidth(Box box)` in the header to allow printWidth to access Box's private variables. 
 - Create a UML for the following class:
 ```plantuml
-class Vec{
+abstract class Vec{
 	-x: Int
 	-y: Int
+	+ {abstract} fees(): Integer
 	-getY(): Int
 	+getX(): Int
 }
@@ -352,4 +353,13 @@ class C{
 	}
 }
 ```
-- 
+- What happens when you `throw` without a try catch?
+	- It stops the program and throws whatever exception you input.
+- What's wrong with the below code? What will happen with this code?
+	- By deleting `cptr`, the unique pointer doesn't know that the object has been deleted. Thus `temp->a` provides undefined behaviour and can lead to a crash.
+- Define coupling and cohesion and fill in the blanks and explain your reasoning:
+	- As programmers, we want "Low coupling, High cohesion".
+	- Coupling refers to the degree to which one class knows about another class. If one class uses the other class directly, they are said to be tightly coupled. Low coupling is desirable because it reduces the interdependency between classes, making the system easier to modify.
+	- Cohesion refers to how closely the responsibilities of a module or class are related to each other. High cohesion means that each module or class is assigned a single well-defined task or responsibility. High cohesion is desirable because it increases the readability and maintainability of the code, and makes the system easier to understand and debug.
+- What is `variant` and how do we use it?
+	- 

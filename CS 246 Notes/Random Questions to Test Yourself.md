@@ -142,11 +142,38 @@ decorator <|-- DippingSauce
 
 ```
 - What is RAII and why is it important in C++?
-- What are the three levels of exception safety? Provide an example of each.
-- What happens when you `throw` without a try catch?
-- Find the  errors in this program:
+- What are the basic, strong, and no throw guarantee in exception safety? Taking a look at below's code, what type of guarantee is this? If it's a `basic` guarantee, how can we augment it so that it is strong or no throw? Assume every line in `f` has a chance to throw:
 ```cpp
+class C{
+	A a;
+	B b;
+	public:
+		void f(){
+			A atemp = a;
+			B btemp = b;
+			atemp.g();
+			btemp.h();
+			a = atemp;
+			b = btemp;
+		}
+}
+```
+- What happens when you `throw` without a try catch?
+- What's wrong with the below code? What will happen with this code.
+```cpp
+struct CImpl{
+	int a;
+	int b;	
+}
 
+class C{
+	unique_ptr<CImpl> pImpl;
+	void f(){
+		auto temp = make_unique<CImpl>(*pImpl);
+		
+		cout << temp->a << endl;
+	}
+}
 ```
 - Define coupling and cohesion and fill in the blanks and explain your reasoning:
 	- As programmers, we want "__ coupling, __ cohesion".

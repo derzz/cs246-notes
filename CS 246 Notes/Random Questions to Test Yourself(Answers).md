@@ -315,10 +315,41 @@ class stuffedCrust: public Decorator{
 		2. **Exception Safety**: It provides exception safety. If an exception is thrown, the stack unwinds, and all the objects in the stack will have their destructors called, releasing all resources owned by them.
 		3. **Resource Management**: It's not just about memory, but any resource that needs deterministic cleanup: file handles, network sockets, database connections, mutex locks, etc.
 		4. **Code Readability and Maintenance**: It makes the code easier to read and maintain. Resource management logic is tied to the object, which is more intuitive and less error-prone than manually controlling resource lifetimes.
-- What are the three levels of exception safety? Provide an example of each. 
+- What are the basic, strong, and no throw guarantee in exception safety? Taking a look at below's code, what type of guarantee is this? If it's a `basic` guarantee, how can we augment it so that it is strong or no throw? Assume every line in `f` has a chance to throw:
 	- Basic guarantee: If an exception is thrown from a function `f`, the program is in a valid but undefined state.
+	- Strong guarantee: If an exception is thrown, then the program state is reverted to below `f`'s call. 
+	- No throw guarantee: `f` will never throw and the program is reverted before `f`'s call.
 ```cpp
+// Below is not the best example as it seems strong guarantee, but:
 class C{
-	
+	A a;
+	B b;
+	public:
+		void f(){
+			A atemp = a;
+			B btemp = b;
+			atemp.g();
+			btemp.h();
+			a = atemp;
+			b = btemp; // Let's say b = btemp fails! Then, a is in an undefined state.
+		}
 }
 ```
+A possible change can be:
+```cpp
+struct CImpl{
+	A a;
+	B b;	
+}
+
+class C{
+	unique_ptr<CImpl> pImpl;
+	void f(){
+		auto temp = make_unique<CImpl>(*pImpl);
+		temp->a.g(); // If throw, nothing changes.
+		temp->b.h(); // Same above.
+		std::swap(temp, pImpl); // Can't throw
+	}
+}
+```
+- 

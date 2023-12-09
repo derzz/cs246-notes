@@ -106,7 +106,7 @@ Class List{
 		Class Iterator{
 			Node* cur;
 			public:
-				Iterator(Node* cur), cur{cur}{};
+				Iterator(Node* cur), cur{cur}{}
 				Iterator& operator++(){
 					cur = cur->next;
 					return *this;

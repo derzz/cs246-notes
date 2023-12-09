@@ -80,31 +80,59 @@ class LinkedList{
 	public:
 		class Iterator{
 			Node* head;
+
+			Iterator(Node* cur), head{cur}{}
+
 			Iterator& operator++(){
-				head = head.next;
+				head = head->next;
 				return *this;
 			}
 
-			Iterator& operator!=(LinkedList& other){
-				return head->val != other.head->val;
+			Iterator& operator!=(const Iterator& other) const{
+				return head != other->head;
 			}
 
-			int& operator*(){
-				return *val;
+			int operator*() const{
+				return head->val;
 			}
 		
 		};
 
-	Iterator
-};
-```
+	Iterator begin() const{
+		return Iterator{head};
+	}
 
-- `void printWidth( Box box );` is not defined as a function in Box. Since we can't augment main, we can not make `void printWidth` as `void Box::printWidth`, as main will be unable to call it. Instead, make `void printWidth(Box box)` into `friend void printWidth(Box box)` in the header to allow printWidth to access Box's private variables. 
-- Steps of Object Creation
+	Iterator end() const{
+		return Iterator{nullptr};
+	}
+};
+
+int main(){
+	LinkedList l = new LinkedList{new Node(5, new Node(6, new Node, (7, nullptr)))};
+	for(int n: l) cout << n << endl;
+}
+```
+- Will the code below work? If so, explain the process and explain its output. If not, explain why not and a fix for it. Do not change the main function if a fix is needed.
+	- This code will not work. `void printWidth( Box box );` is not defined as a function in Box. Since we can't augment main, we can not make `void printWidth` as `void Box::printWidth`, as main will be unable to call it. Instead, make `void printWidth(Box box)` into `friend void printWidth(Box box)` in the header to allow printWidth to access Box's private variables. 
+- Create a UML for the following class:
+```plantuml
+class Vec{
+	-x: Int
+	-y: Int
+	-getY(): Int
+	+getX(): Int
+}
+```
+(Red boxes mean `-` and green circle means `+`)
+
+- What are the steps of Object Creation?
 	1. Space is allocated
 	2. Superclass constructor is run
 	3. MIL is initialized for class constructors
 	4. Constructor body runs
+- Explain the differences between composition, aggregation, and inheritance with a UML diagram
+	- Composition is a 'own-a' relationship between the superclass and subclass. The superclas
+
 - Steps of Object Destruction
 	1. Destructor body runs
 	2. Object fields that have destructors are called in reverse declaration order

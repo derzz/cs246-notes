@@ -43,10 +43,8 @@ int main()
 {
     Box box;
 
-    // set box width without member function
     box.setWidth(10.0);
 
-    // Use friend function to print the wdith.
     printWidth( box );
 
     return 0;

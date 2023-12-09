@@ -93,49 +93,14 @@ delete yp;
 delete xpToY;
 ```
 - What does `final` do?
-- Given the following code:
-```cpp
-class Student{
-	public:
-		virtual int fees() const = 0;
-};
-
-class Regular: public Student{
-	public:
-		int fees() const override;
-};
-
-class Coop: public Student{
-	public:
-		int fees() const override;
-};
-
-Student* s = new Student();
-Regular r = Regular();
-Coop* c = new Coop();
-```
-- The below code produces t1 in the end to now contains `"Shakespeare", "Mr. English", 200, "CS"` Why is that and how can we fix it?
-```cpp
-Text& Text::operator=(Text&& other){
-	Book::operator = (std::move(other));
-	topic = std::move(other.topic);
-	return *this;
-}
-
-Text t1{"Algos", "CLRS", 1000, "CS"};
-Text t2{"Shakespeare", "Mr. English", 200, "English"};
-
-Book& r1 = t1;
-Book& r2 = t2;
-r1 = r2;
-```
-- Write a template for a linked list, where the programmer can use any type in the node.
-- Assuming `v` is a vector, why won't the below work as expected?
+- Write a template for a linked list, where the programmer can use any type in the list. Do not implement any of the functions. Write out the structure for a node inside the template and provide a function for `ith` that takes an integer `i` and outputs the value at the `i` th node. Furthermore, add a function called `addToFront` that adds a node to the front of the linked list.
+- Assuming `v` is a vector, why won't the below delete the whole vector as expected? Augment it so it works.
 ```cpp
 for(auto it = v.begin(); it != v.end(); ++it){
 	if(*it == 5) v.erase(it);
 }
 ```
+- What vector function will erase 
 - Create a decorator and implement the missing portions for Pizza given the following information and UML Diagram:
 ```cpp
 class Pizza{

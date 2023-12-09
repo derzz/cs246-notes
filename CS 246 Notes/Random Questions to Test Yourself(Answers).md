@@ -238,5 +238,37 @@ class derive: public Base{
 		void foo() override; // Causes an error!
 }
 
-class Base2
+class Base2 final{
+	int x;
+}
+
+class derive2: public Base2{ // Error!
+	int y;
+}
 ```
+- Write a template for a linked list, where the programmer can use any type in the list. Do not implement any of the functions. Write out the structure for a node inside the template and provide a function for `ith` that takes an integer `i` and outputs the value at the `i` th node. Furthermore, add a function called `addToFront` that adds a node to the front of the linked list.
+```cpp
+template<typename T> class LinkedList{
+	struct Node{
+		T data;
+		Node* next;
+	};	
+	Node* head;
+	public:
+		class Iterator{
+			...
+			T& operator*() const;
+		};
+		T ith(int i) const;
+		void addToFront(const T& n);
+};
+```
+- Assuming `v` is a vector, why won't the below delete the whole vector work as expected? Augment it so it works.
+	- Assume the vector has `[5, 5]`. When deleting the first 5, it successfully deletes it but it automatically moves `it` up by 1 so the vector will now have `[5]`. See below for a correct implementation:
+```cpp
+for(auto it = v.begin(); it != v.end();){
+	if(*it == 5) v.erase(it);
+	else it++;
+}
+```
+- What 

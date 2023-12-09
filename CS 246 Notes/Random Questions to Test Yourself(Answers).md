@@ -8,6 +8,6 @@
 	4. Constructor body runs
 - Steps of Object Destruction
 	1. Destructor body runs
-	2. Object fields thawt have destructors are called in reverse declaration order
+	2. Object fields that have destructors are called in reverse declaration order
 	3. Superclass destructor runs
-		1. Memory is freed
+	4. Memory is freed

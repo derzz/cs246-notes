@@ -178,3 +178,4 @@ decorator <|-- StuffedCrust
 decorator <|-- DippingSauce
 
 ```
+- What is RAII and why is it important in C++?

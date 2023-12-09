@@ -315,4 +315,10 @@ class stuffedCrust: public Decorator{
 		2. **Exception Safety**: It provides exception safety. If an exception is thrown, the stack unwinds, and all the objects in the stack will have their destructors called, releasing all resources owned by them.
 		3. **Resource Management**: It's not just about memory, but any resource that needs deterministic cleanup: file handles, network sockets, database connections, mutex locks, etc.
 		4. **Code Readability and Maintenance**: It makes the code easier to read and maintain. Resource management logic is tied to the object, which is more intuitive and less error-prone than manually controlling resource lifetimes.
-- 
+- What are the three levels of exception safety? Provide an example of each. 
+	- Basic guarantee: If an exception is thrown from a function `f`, the program is in a valid but undefined state.
+```cpp
+class C{
+	
+}
+```

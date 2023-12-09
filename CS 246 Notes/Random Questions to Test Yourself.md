@@ -142,4 +142,12 @@ decorator <|-- DippingSauce
 
 ```
 - What is RAII and why is it important in C++?
-- 
+- What are the three levels of exception safety? Provide an example of each.
+- What happens when you `throw` without a try catch?
+- Find the  errors in this program:
+```cpp
+
+```
+- Define coupling and cohesion and fill in the blanks and explain your reasoning:
+	- As programmers, we want "__ coupling, __ cohesion".
+- What is `variant` and how do we use it?

@@ -178,5 +178,5 @@ class C{
 ```
 - Define coupling and cohesion and fill in the blanks and explain your reasoning:
 	- As programmers, we want "__ coupling, __ cohesion".
-- What is `variant` and how do we use it?
+- What is `variant` and how do we use it? What does `holds_alternative` do? Provide an example of variant being used between an integer and double.
 - TODO Do Lesson 23 here

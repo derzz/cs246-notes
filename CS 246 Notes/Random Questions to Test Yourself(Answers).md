@@ -119,13 +119,12 @@ int main(){
 abstract class Vec{
 	-x: Int
 	-y: Int
-	+ {abstract} fees(): Integer
+	- {abstract} fees(): Integer
 	-getY(): Int
 	+getX(): Int
 }
 ```
-(Red boxes mean `-` and green circle means `+`)
-
+(Red boxes mean `-` and green circle means `+`, remember that `Vec` needs to have `**` or be italicized!
 - What are the steps of Object Creation?
 	1. Space is allocated
 	2. Superclass constructor is run
@@ -361,5 +360,19 @@ class C{
 	- As programmers, we want "Low coupling, High cohesion".
 	- Coupling refers to the degree to which one class knows about another class. If one class uses the other class directly, they are said to be tightly coupled. Low coupling is desirable because it reduces the interdependency between classes, making the system easier to modify.
 	- Cohesion refers to how closely the responsibilities of a module or class are related to each other. High cohesion means that each module or class is assigned a single well-defined task or responsibility. High cohesion is desirable because it increases the readability and maintainability of the code, and makes the system easier to understand and debug.
-- What is `variant` and how do we use it?
-	- 
+- What is `variant` and how do we use it? What does `holds_alternative` do? Provide an example of variant being used between an integer and double using `holds_alternative`.
+	- Variant acts as a type safe union between the types provided in it. We first `#include <variant>` to use it.  `holds_alternative` checks if the variant holds the specified alternative type.
+```cpp
+variant<int, double> v;
+v = 10; // v contains int
+
+if (std::holds_alternative<int>(v)) {
+	std::cout << "v holds int\n";
+}
+
+v = 5.5; // v contains double
+
+if (std::holds_alternative<double>(v)) {
+	std::cout << "v holds double\n";
+}
+```

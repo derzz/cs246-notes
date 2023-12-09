@@ -5,11 +5,11 @@ struct Node{
 	Node* nextNode;
 }
 ```
-- Create the Constructor for a linked list using the above nodes as a template.
-- Create the destructor for a linked list
-- Create the copy and move constructor for a linked list
-- Create the copy assignment and move assignment operator for a linked list
-- Using the spaceship operator, make a program that calculates whether a Linked List is longer than the other.
+- Create the Constructor for a node using the above nodes as a template.
+- Create the destructor for a node
+- Create the copy and move constructor for a node
+- Create the copy assignment and move assignment operator for a node
+- Using the spaceship operator, make a program that calculates whether a node is longer than the other.
 
 - Define encapsulation and using structs and classes, define a pro and con of using one over the other.
 - Create an iterator to traverse a given linked list. Include the operations `++`, `!=`, and `*`(dereference

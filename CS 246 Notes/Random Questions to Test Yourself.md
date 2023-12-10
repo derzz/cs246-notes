@@ -4,7 +4,7 @@ struct Node{
 	Node* nextNode;
 }
 ```
-- Create the Constructor for a node using the above nodes as a template.
+- Create the Constructor for a node using the above as a template.
 - Create the destructor for a node
 - Create the copy and move constructor for a node
 - Create the copy assignment and move assignment operator for a node

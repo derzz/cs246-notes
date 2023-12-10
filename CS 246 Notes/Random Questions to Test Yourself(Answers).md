@@ -72,7 +72,7 @@ class Node{
 ```
 The user or other classes cannot access `val` or `nextNode` freely as the compiler will provide an error. 
 
-Create an iterator to traverse a given linked list. Include the operations `++`, `!=`, and `*`(dereference). After, create a main function, given a linked list `a`, using the iterator, output the values of `a`.
+- Create an iterator to traverse a given linked list. Include the operations `++`, `!=`, and `*`(dereference). After, create a main function, given a linked list `a`, using the iterator, output the values of `a`.- 
 
 ```cpp
 class LinkedList{

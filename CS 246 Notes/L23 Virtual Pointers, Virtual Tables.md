@@ -109,7 +109,7 @@ C <|-- D
 ```
 - `D` has two `A` fields! One from B and C!
 	- Ambiguous!
-- Just use `dObject.B::a` and `dObject.C:aa` to differentiate!
+- Just use `dObject.B::a` and `dObject.C:a` to differentiate!
 - What if I want just one copy of my a fields?
 	- Use `virtual inheritance`!
 # Virtual Inheritance

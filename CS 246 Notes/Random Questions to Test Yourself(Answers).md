@@ -6,7 +6,7 @@ Node(int val, Node* nextNode): val{val}, nextNode{nextNode}{}
 - Create the destructor for a linked list
 ```cpp
 ~Node(){
-	delete *nextNode;
+	delete nextNode;
 }
 ```
 - Create the copy and move constructor for a linked list
@@ -56,7 +56,7 @@ auto Node::operator<=>(Node &other){
 }
 ```
 - Define encapsulation and using structs and classes, define a pro and con of using one over the other.
-	- Encapsulation is the act of "hiding" data or functions from other classes or the user. This can be done via `private` fields in structures and classes have this enabled by default. Structures' fields will always be public by default and is useful when we need to take data like with nodes. Classes automatically encapsulate non specified fields, usually as variables that the programmer doesn't want the user to touch. This increases abstraction and can ensure that the user only uses public methods to manipulate these variables. Take below:
+	- Encapsulation is the act of "hiding" data or functions from other classes or the user. This can be done via `private` fields in structures and classes have this enabled by default. Structures' fields will always be public by default and is useful when we need to take data like with nodes. Classes automatically encapsulate non specified fields(invariants). This increases abstraction and can ensure that the user only uses public methods to manipulate these variables. Take below:
 ```cpp
 struct Node{
 	int val;
@@ -411,6 +411,7 @@ class C : virtual public A {
 class D : public B, public C {
 };
 ```
+Or just don't use it...
 - Write a template function for a `max` function which takes the biggest of two objects.
 ```cpp
 template<typename T> T max(x, y){

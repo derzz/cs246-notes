@@ -268,10 +268,11 @@ template<typename T> class LinkedList{
 		void addToFront(const T& n);
 };
 ```
-- Assuming `v` is a vector, why won't the below delete the whole vector work as expected? Augment it so it works.
+- Assuming `v` is a vector, why won't the below delete all values 5 as expected? Augment it so it works.
 	- Assume the vector has `[5, 5]`. When deleting the first 5, it successfully deletes it but it automatically moves `it` up by 1 so the vector will now have `[5]`. See below for a correct implementation:
 ```cpp
 for(auto it = v.begin(); it != v.end();){
+	v.erase(it);
 	if(*it == 5) v.erase(it);
 	else it++;
 }

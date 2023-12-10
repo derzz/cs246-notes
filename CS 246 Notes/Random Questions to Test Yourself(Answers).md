@@ -417,3 +417,29 @@ template<typename T> T max(x, y){
 ```cpp
 Text:: Text(Text&& other): Book{std::move(other)}, topic{std::move(other.topic)}{}
 ```
+- Answer the following questions as true or false. Provide reasoning for any response:
+	- An abstract superclass can have an abstract subclass 
+		- True, the subclasses will be abstract though and cannot be called by themselves.
+	- In public inheritance, the subclass has access to the superclass’s private members 
+		- False, private members will always be private in any type of inheritance.
+	- It is OK to override non-virtual methods
+		- False, you can but you shouldn't. When you override, the compiler will not read the function that has been overrided but instead just read the base class method like so:
+```cpp
+class Base {
+public:
+    void nonVirtualMethod() {
+        std::cout << "Base::nonVirtualMethod()" << std::endl;
+    }
+};
+
+class Derived : public Base {
+public:
+    void nonVirtualMethod() override {
+        std::cout << "Derived::nonVirtualMethod()" << std::endl;
+    }
+};
+
+// Example usage
+Base* ptr = new Derived();
+ptr->nonVirtualMethod();  // Calls Base::nonVirtualMethod()
+```

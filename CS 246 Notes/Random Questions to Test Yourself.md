@@ -202,3 +202,7 @@ cout << dobject.a << endl;
 ```cpp
 Text:: Text(Text&& other): Book{other}, topic{other.topic}{}
 ```
+- Answer the following questions as true or false. Provide reasoning for any response:
+	- An abstract superclass can have an abstract subclass 
+	- In public inheritance, the subclass has access to the superclass’s private members 
+	- It is OK to override non-virtual methods

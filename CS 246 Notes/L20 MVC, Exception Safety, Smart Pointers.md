@@ -126,7 +126,7 @@ template<typename T> class unique_ptr{
 - In such a case, we can use shared pointers
 ```cpp
 {
-	auto p = make_shared<c>{...};
+	auto p = make_shared<C>{...};
 	if(...){
 		auto q = p;	
 	} // q goes out of scope, doesn't delete, p exists

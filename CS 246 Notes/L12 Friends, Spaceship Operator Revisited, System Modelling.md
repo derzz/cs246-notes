@@ -19,19 +19,19 @@ Class List{
 			Iterator(Node* cur): cur{cur}{}
 			public:
 			// operator overloads
-				friend class List{
-					Iterator begin(){
-						return Iterator{head};
-					}
-					Iterator end(){
-						return Iterator{nullptr};
-					}
-				}
+				friend class List; // Declares List as a friend of Iterator
+		};
+			Iterator begin(){
+				return Iterator{head};
+			}
+			Iterator end(){
+				return Iterator{nullptr};
+			}
 		};
 };
 ```
 - If class A declares class B as a friend => B may access private fields/methods of A
--  Now user cannot create Iterators, only List can
+-  Now user cannot create Iterators, only List can, and it forces the use of `head`
 	- We are sure all Iterators created are via begin/end
 > Why have friends if they're not doing anything for you?
 - Advice: Limit your friendships!

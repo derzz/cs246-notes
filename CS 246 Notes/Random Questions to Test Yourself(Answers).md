@@ -382,12 +382,32 @@ if (std::holds_alternative<double>(v)) {
 	- In addition, each object instance of a class with virtual functions also has a vptr, which is a pointer to the vtable. This vptr is added to the object's memory footprint. 
 - Will the following code compile and run? If not, why won't it?
 	- It will not. `B` is inheriting A privately so `D` cannot access `B`'s  `a` as it's now private for `D`. This is similar to the diamond problem BUT the reason it doesn't compile is not because of multiple inheritance. 
-- What is the deadly diamond of death? Draw a UML to showcase this concept.
-	- `D` will have two copies of `A`'s members'
+- What is the deadly diamond of death? Draw a UML to showcase this concept. Provide a solution for this problem.
+	- `D` will have two copies of `A`'s members, making it ambiguous if it uses B's `A` or C's `A`. To solve this problem, you want to use `virtual` inheritance to solve this issue like so:
 ```plantuml
 A <|-- B
 B <|-- D
 A <|-- C
 C <|-- D
 ```
+```cpp
+class A {
+public:
+    void foo();
+};
+
+class B : virtual public A {
+};
+
+class C : virtual public A {
+};
+
+class D : public B, public C {
+};
+```
 - Write a template function for a `max` function which takes the biggest of two objects.
+```cpp
+template<typename T> T max(x, y){
+	return x > y? x:y;
+}
+```

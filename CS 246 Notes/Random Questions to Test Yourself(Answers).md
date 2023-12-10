@@ -120,11 +120,12 @@ abstract class Vec{
 	-x: Int
 	-y: Int
 	- {abstract} fees(): Integer
+	# {abstract} imProtected(): Integer
 	-getY(): Int
 	+getX(): Int
 }
 ```
-(Red boxes mean `-` and green circle means `+`, remember that `Vec` needs to have `**` or be italicized!
+(Red boxes mean `-` and green circle means `+`, yellow diamond means `#`, remember that `Vec` needs to have `**` or be italicized!
 - What are the steps of Object Creation?
 	1. Space is allocated
 	2. Superclass constructor is run

@@ -58,6 +58,9 @@ class Vec{
 	int getY(){return y;}
 	int yolo() = 0;
 
+	protected:
+		int imProtected() = 0;
+
 	public:
 		int getX(){return x;}
 };

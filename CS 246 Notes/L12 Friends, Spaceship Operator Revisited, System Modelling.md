@@ -14,7 +14,7 @@ Class List{
 	Struct Node;
 	Node* head = nullptr;
 	public:
-		Class Iterator{
+		class Iterator{
 			Node* cur;
 			Iterator(Node* cur): cur{cur}{}
 			public:

@@ -179,12 +179,11 @@ class C{
 - Define coupling and cohesion and fill in the blanks and explain your reasoning:
 	- As programmers, we want "__ coupling, __ cohesion".
 - What is `variant` and how do we use it? What does `holds_alternative` do? Provide an example of variant being used between an integer and double.
-- - TODO Do Lesson 23 here
 - Why do virtual methods take up more memory than regular methods?
-- Will the following code compile and run? If not, why won't it:
+- Will the following code compile and run? If not, why won't it, if so, what will it output?
 ```cpp
 struct A{int a;};
-struct B: public A {int b;};
+struct B: private A {int b;};
 struct C: public A{int c;};
 
 struct D: public B, public C{
@@ -192,9 +191,7 @@ struct D: public B, public C{
 };
 
 D dobject;
-cout << dobject.a << endl; // Won't compile!
+cout << dobject.a << endl;
 ```
-- What is the deadly diamond of death? Draw a UML to showcase this concept
-- .
-
-NOTE: For the Fall 2023 Final, `<algorithm>` is not tested and thus not included.
+- What is the deadly diamond of death? Draw a UML to showcase this concept.
+- Write a template function for a `max` function which takes the biggest of two objects.

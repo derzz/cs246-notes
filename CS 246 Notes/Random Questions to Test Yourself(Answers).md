@@ -376,3 +376,18 @@ if (std::holds_alternative<double>(v)) {
 	std::cout << "v holds double\n";
 }
 ```
+- Why do virtual methods take up more memory than regular methods?
+	- Virtual methods in C++ require more memory than non-virtual methods because of the additional "vtable" (virtual table) and "vptr" (virtual pointer) that are used to support dynamic polymorphism. 
+	- Each class that has at least one virtual function has its own vtable. This table is a static array that the compiler creates for you, and it contains one entry for each virtual function that can be called by objects of the class. Each entry is simply a function pointer that points to the most-derived function accessible by the class.
+	- In addition, each object instance of a class with virtual functions also has a vptr, which is a pointer to the vtable. This vptr is added to the object's memory footprint. 
+- Will the following code compile and run? If not, why won't it?
+	- It will not. `B` is inheriting A privately so `D` cannot access `B`'s  `a` as it's now private for `D`. This is similar to the diamond problem BUT the reason it doesn't compile is not because of multiple inheritance. 
+- What is the deadly diamond of death? Draw a UML to showcase this concept.
+	- `D` will have two copies of `A`'s members'
+```plantuml
+A <|-- B
+B <|-- D
+A <|-- C
+C <|-- D
+```
+- Write a template function for a `max` function which takes the biggest of two objects.

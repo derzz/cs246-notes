@@ -1,7 +1,7 @@
 # Template Functions
 - How do `make_unique<T>` and `d/r/s/c_cast` work? Via template functions!
 ```cpp
-template<typename T> T min(Tx, Ty){
+template<typename T> T min(x, y){
 	return x < y? x:y;
 }
 ```

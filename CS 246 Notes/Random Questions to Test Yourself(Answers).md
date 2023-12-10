@@ -88,7 +88,7 @@ class LinkedList{
 				return *this;
 			}
 
-			Iterator& operator!=(const Iterator& other) const{
+			bool operator!=(const Iterator& other) const{
 				return head != other->head;
 			}
 
@@ -110,6 +110,10 @@ class LinkedList{
 int main(){
 	LinkedList l = new LinkedList{new Node(5, new Node(6, new Node, (7, nullptr)))};
 	for(int n: l) cout << n << endl;
+	// Another valid way
+	for(LinkedList::Iterator it=l.begin(); it != l.end(); ++it){
+		cout << *it << endl;	
+	}
 }
 ```
 - Will the code below work? If so, explain the process and explain its output. If not, explain why not and a fix for it. Do not change the main function if a fix is needed.

@@ -198,3 +198,7 @@ cout << dobject.a << endl;
 ```
 - What is the deadly diamond of death? Draw a UML to showcase this concept. Provide a solution for this problem.
 - Write a template function for a `max` function which takes the biggest of two objects.
+- Assuming `Text` is a subclass of `Book`, what is wrong with this move constructor and how do we fix it?
+```cpp
+Text:: Text(Text&& other): Book{other}, topic{other.topic}{}
+```

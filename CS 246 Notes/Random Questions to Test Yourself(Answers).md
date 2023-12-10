@@ -412,3 +412,8 @@ template<typename T> T max(x, y){
 	return x > y? x:y;
 }
 ```
+- Assuming `Text` is a subclass of `Book`, what is wrong with this move constructor and how do we fix it?
+	- This move constructor is not moving the values of `other` to `this`. We need to convert `other` to an `rvalue` by using `std::move` like so:
+```cpp
+Text:: Text(Text&& other): Book{std::move(other)}, topic{std::move(other.topic)}{}
+```

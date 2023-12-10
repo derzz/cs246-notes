@@ -166,6 +166,7 @@ public class Observer{
 	virtual ~observer(){}
 };
 
+// Concrete Subject
 class Tweeter: public Subject{
 	string lastTweet;
 	ifStream file;
@@ -179,6 +180,7 @@ class Tweeter: public Subject{
 	string getState() const {return lastTweet;}
 };
 
+// Concrete Observer
 class Follower: public Obsesrver{
 	string name;
 	Tweeter* iFollow;

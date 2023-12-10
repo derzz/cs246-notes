@@ -96,7 +96,7 @@ delete yp;
 delete xpToY;
 ```
 - What does `final` do?
-- Write a template for a linked list, where the programmer can use any type in the list. Do not use `st` Do not implement any of the functions. Write out the structure for a node inside the template and provide a function for `ith` that takes an integer `i` and outputs the value at the `i` the node. Furthermore, add a function called `addToFront` that adds a node to the front of the linked list.
+- Write a template for a linked list, where the programmer can use any type in the list. Do not use `STL Lists`. Do not implement any of the functions. Write out the structure for a node inside the template and provide a function for `ith` that takes an integer `i` and outputs the value at the `i` the node. Furthermore, add a function called `addToFront` that adds a node to the front of the linked list.
 - Assuming `v` is a vector, why won't the below delete the whole vector as expected? Augment it so it works.
 ```cpp
 for(auto it = v.begin(); it != v.end(); ++it){

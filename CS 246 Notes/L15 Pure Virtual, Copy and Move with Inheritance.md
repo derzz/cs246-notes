@@ -88,7 +88,7 @@ Text::Text(const Text& other):Book{other}, topic{other.topic};
 Text:: Text(Text&& other): Book{std::move(other)}, topic{std::move(other.topic)}{}
 ```
 - If we were to call `Book{other}`, this would copy title, author, and length, rather than move them, why?
-	- `other` is an `lvalue`!
+	- `other` is an `lvalue` as an `rvalue` reference is an `lvalue`!
 		- `lvalue` lasts for entire scope and you can take the address
 		- `lvalue` invokes copy semantics
 	- We use `std::move(other)` to be treated as an `rvalue`

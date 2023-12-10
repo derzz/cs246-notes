@@ -163,15 +163,30 @@ Turtle <|-- GreenTurtle
 class Turtle{
 	void drawHead(){...}
 	void drawLegs(){...}
-	virtual void drawShell() = 0;
-}
+	virtual void drawShell() = 0; // Private pure virtual
 
-public:
-	void draw(){
-		drawHead();
-		drawShell();
-		drawLegs();
+	public:
+		void draw(){
+		// Subclasses can override specific parts of functions and have a unique draw function
+			drawHead();
+			drawShell();
+			drawLegs();
+		}
+};
+
+class RedTurtle: public Turtle{
+	void drawShell() override{
+		cout << "red" << endl;
 	}
 };
 ```
-
+- If we call draw on a `Turtle*`
+	- Call `Turtle:drawHead`
+	- `(Red/Green)Turtle::drawShell`
+	- `Turtle::drawLegs()`
+- What is the purpose of public methods?
+	- Provide an interface to clients- with invariants, pre/post conditions, and a description of what the method does
+- Purpose of virtual methods- "an interface" for subclasses to override and change behaviour
+- What about public virtual methods: Contradictory- they promise behaviour to clients, while giving subclasses power to change behaviour
+- No guarantee subclasses will respect invariants when overriding
+	- Template method pattern may be generalized into non-virtual idiom(**NVI**)

@@ -1,5 +1,3 @@
-
-
 # NVI(Non Virtual Idiom)
 - NVI States:
 	1. Public methods should be non-virtual

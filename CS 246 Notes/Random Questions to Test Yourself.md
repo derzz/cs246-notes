@@ -56,7 +56,7 @@ class Vec{
 	int y;
 
 	int getY(){return y;}
-	int yolo() = 0;
+	int fees() = 0;
 
 	protected:
 		int imProtected() = 0;

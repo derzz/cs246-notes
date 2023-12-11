@@ -181,7 +181,7 @@ class Tweeter: public Subject{
 };
 
 // Concrete Observer
-class Follower: public Obsesrver{
+class Follower: public Observer{
 	string name;
 	Tweeter* iFollow;
 	public:

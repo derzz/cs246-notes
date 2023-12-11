@@ -134,4 +134,4 @@ template<typename T> class unique_ptr{
 ```
 - Shared pointers work by maintaining a <u>reference count</u> on creation, incremented
 	- On deletion, decremented
-	- When it reaches 0, underlying object
+	- When it reaches 0, underlying object gets deleted

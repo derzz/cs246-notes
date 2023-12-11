@@ -24,7 +24,7 @@ class DigitalMedia{
  - All without changing the public interface! Just as fast as before, compiler will optimize out extra function call
  - Easier to use NVI from the start than adding it later
 # STL Maps
-- Array that can be indexed with different types than integer
+- Array that can be indexed with different types than integer(Similar to Dictonaries)
 	- Found in `<map>`
 ```cpp
 map<string, int> m;

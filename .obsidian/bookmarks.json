@@ -1,0 +1,88 @@
+{
+  "items": [
+    {
+      "type": "file",
+      "ctime": 1701716390018,
+      "path": "CS 246 Notes/L2 Files and Strings.md",
+      "subpath": "#Files",
+      "title": "File IO"
+    },
+    {
+      "type": "file",
+      "ctime": 1701717724128,
+      "path": "CS 246 Notes/L3 Command Line, Arrays, Default Parameters, Overloading, Struct, Cast, Null Pointers.md",
+      "subpath": "#Command Line Arguments",
+      "title": "CMD Arguments"
+    },
+    {
+      "type": "file",
+      "ctime": 1701718301376,
+      "path": "CS 246 Notes/L4 References, Dynamic Memory.md",
+      "subpath": "#References",
+      "title": "References"
+    },
+    {
+      "type": "file",
+      "ctime": 1701723137822,
+      "path": "CS 246 Notes/L6 Classes and Constructors.md",
+      "subpath": "#Steps of Object Creation",
+      "title": "Steps of Object Creation"
+    },
+    {
+      "type": "group",
+      "ctime": 1701723791241,
+      "items": [
+        {
+          "type": "file",
+          "ctime": 1701723799312,
+          "path": "CS 246 Notes/L7 MIL, Copy Constructors.md",
+          "subpath": "#Copy Constructors",
+          "title": "Copy Constructor"
+        },
+        {
+          "type": "file",
+          "ctime": 1701724856322,
+          "path": "CS 246 Notes/L8 Explicit Constructors, Destructors, Copy Assignment Operator.md",
+          "subpath": "#Destructor(`dtors`)",
+          "title": "Destructors"
+        },
+        {
+          "type": "file",
+          "ctime": 1701731345092,
+          "path": "CS 246 Notes/L8 Explicit Constructors, Destructors, Copy Assignment Operator.md",
+          "subpath": "#Copy Assignment Operator",
+          "title": "Copy Assignment Operator'"
+        },
+        {
+          "type": "file",
+          "ctime": 1701731363091,
+          "path": "CS 246 Notes/L9 Copy, Swap, Move Assignment Operator, Elision, Member Operators.md",
+          "subpath": "#Move Assignment Operator",
+          "title": "Move Assignment Operator"
+        },
+        {
+          "type": "file",
+          "ctime": 1701731357317,
+          "path": "CS 246 Notes/L9 Copy, Swap, Move Assignment Operator, Elision, Member Operators.md",
+          "subpath": "#Move Constructor",
+          "title": "Move Constructor"
+        }
+      ],
+      "title": "Big 5"
+    },
+    {
+      "type": "file",
+      "ctime": 1701982020562,
+      "path": "CS 246 Notes/L16 Templates, Std Vectors, Design Patterns.md",
+      "subpath": "#Decorator Pattern",
+      "title": "Decorator Pattern"
+    },
+    {
+      "type": "file",
+      "ctime": 1702070646905,
+      "path": "CS 246 Notes/L11 Spaceship Operator, Classes, Encapsulation, Iterator.md",
+      "subpath": "#Iterator Pattern",
+      "title": "Iterators"
+    }
+  ]
+}

@@ -1,0 +1,271 @@
+{
+  "main": {
+    "id": "1967445454d44117",
+    "type": "split",
+    "children": [
+      {
+        "id": "98ac710637825991",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "97eb3423577e2012",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          },
+          {
+            "id": "f9cceb08eeb6d6c5",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          },
+          {
+            "id": "199a25c59615e4a2",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          },
+          {
+            "id": "5312c516201e3846",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          },
+          {
+            "id": "adee719db74c2c81",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          },
+          {
+            "id": "2b1bbc2a1c70a31e",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.8.10"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.8.10"
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "0339e8df0c476975",
+    "type": "split",
+    "children": [
+      {
+        "id": "8aed97d4b0224a0b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2871d65a94cdb6e6",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "5c24f271886bf938",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "PIMPL",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "17c898b80965aca0",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 246.5
+  },
+  "right": {
+    "id": "4e5ed2169a735617",
+    "type": "split",
+    "children": [
+      {
+        "id": "6a5a8d7a212966cc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0a09437883a9c442",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "8701db5ef14bcb86",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "223380b9134b1480",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "3ad2dce2c7ec1ebd",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          },
+          {
+            "id": "a003f8be5cfc7155",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "2b1bbc2a1c70a31e",
+  "lastOpenFiles": [
+    "CS 246 Notes/L5 Returns, Operator Overloads, Separate Compilation.md",
+    "CS 246 Notes/L4 References, Dynamic Memory.md",
+    "CS 246 Notes/L3 Command Line, Arrays, Default Parameters, Overloading, Struct, Cast, Null Pointers.md",
+    "CS 246 Notes/L2 Files and Strings.md",
+    "CS 246 Notes/L1 Introduction to C++.md",
+    "CS 246 Notes/L6 Classes and Constructors.md",
+    "CS 246 Notes/L7 MIL, Copy Constructors.md",
+    "CS 246 Notes/L8 Explicit Constructors, Destructors, Copy Assignment Operator.md",
+    "CS 246 Notes/L19 NVI, Maps, Coupling and Cohesion.md",
+    "CS 246 Notes/L24 Template Functions, algorithm, lambdas, ranges.md",
+    "CS 246 Notes/L11 Spaceship Operator, Classes, Encapsulation, Iterator.md",
+    "CS 246 Notes/L17 Decorator and Observer.md",
+    "CS 246 Notes/L20 MVC, Exception Safety, Smart Pointers.md",
+    "CS 246 Notes/L21 Exception Safety, Vectors, Casting.md",
+    "CS 246 Notes/L18 Exceptions, Factory Method Pattern.md",
+    "CS 246 Notes/L23 Virtual Pointers, Virtual Tables.md",
+    "CS 246 Notes/L22 Casting, Variant, Virtual Methods.md",
+    "CS 246 Notes/L15 Pure Virtual, Copy and Move with Inheritance.md",
+    "CS 246 Notes/L16 Templates, Std Vectors, Design Patterns.md",
+    "CS 246 Notes/L14 Virtual and Destructors.md",
+    "CS 246 Notes/L13 Aggregation and Inheritance.md",
+    "CS 246 Notes/Random Questions to Test Yourself(Answers).md",
+    "CS 246 Notes/Random Questions to Test Yourself.md",
+    "CS 246 Notes/L12 Friends, Spaceship Operator Revisited, System Modelling.md",
+    "CS 246 Notes/L9 Copy, Swap, Move Assignment Operator, Elision, Member Operators.md",
+    "README.md",
+    "Untitled.canvas",
+    "CS 246 Notes/attachments/Pasted image 20231130123456.png",
+    "CS 246 Notes/attachments/Pasted image 20231130120802.png",
+    "CS 246 Notes/attachments/Pasted image 20231130115303.png",
+    "CS 246 Notes/attachments/Pasted image 20231130114858.png",
+    "CS 246 Notes/attachments/Pasted image 20231121114233.png",
+    "CS 246 Notes/attachments/compositionAndAggregation.png",
+    "CS 246 Notes/attachments/Pasted image 20231130123009.png",
+    "New Text Document.txt",
+    "CS 246 Notes/attachments/Pasted image 20231005120753.png",
+    "CS 246 Notes/attachments/moveAssignmentOperator.png",
+    "CS 246 Notes/attachments/moveConstructor.png",
+    "CS 246 Notes/attachments",
+    "CS 246 Notes",
+    "CS 246"
+  ]
+}
